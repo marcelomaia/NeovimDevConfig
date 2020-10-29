@@ -1,4 +1,5 @@
 " START - Setting up Vundle - the vim plugin bundler
+" https://github.com/VundleVim/Vundle.vim/issues/769
 let iCanHazVundle=1
 let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
 if !filereadable(vundle_readme)
@@ -29,7 +30,7 @@ Plugin 'airblade/vim-gitgutter' " NERDTree git
 Plugin 'tpope/vim-fugitive' " NERDTree git
 Plugin 'ctrlpvim/ctrlp.vim' " Search files
 Plugin 'scrooloose/nerdcommenter' " Comments
-Plugin 'sheerun/vim-polyglot'
+Plugin 'sheerun/vim-polyglot' " Syntax highlight
 
 " Intelisense
 Plugin 'neoclide/coc.nvim'
@@ -55,7 +56,9 @@ let mapleader = "\\"
 colorscheme dracula
 let g:airline_theme='wombat'
 noremap q1 :q<CR>
-nnoremap w1 :w<CR>
+nnoremap w2 :w<CR>
+nnoremap wq1 :wq<CR>
+set confirm
 set number
 set incsearch
 set hlsearch
@@ -101,7 +104,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omnisharp', 'coc-python', 'coc-docker' ]
+let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omnisharp', 'coc-python', 'coc-docker' , 'coc-pairs', 'coc-vetur' ]
 
 " ============= Coc =================
 
@@ -136,6 +139,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|out\|bin\|obj\|tmp$',
   \ 'file': '\.so$\|\.dat$|\.DS_Store$'
   \ }
+let g:ctrlp_show_hidden = 1
 " ================Ctrlp====================
 
 " ================GitGutter====================

@@ -8,3 +8,4 @@ cp ./init.vim ~/.config/nvim/init.vim
 echo "Copying language specific files..."
 cp -r ./ftplugin ~/.config/nvim/after/
 
+# TODO: ask if is desired to change caps for esc
