@@ -92,8 +92,8 @@ autocmd BufWritePre * :%s/\s\+$//e
 " inoremap <silent><expr> <c-space> coc#refresh() TODO: whats this does?
 nmap <silent> <Leader>j <Plug>(coc-diagnostic-prev)
 nmap <silent> <Leader>k <Plug>(coc-diagnostic-next)
-nmap <silent> <Leader>J <Plug>(coc-diagnostic-prev-error)
-nmap <silent> <Leader>K <Plug>(coc-diagnostic-next-error)
+nmap <silent> <Leader>m <Plug>(coc-diagnostic-prev-error)
+nmap <silent> <Leader>, <Plug>(coc-diagnostic-next-error)
 
 nmap <F2> <Plug>(coc-rename)
 nmap <silent> <c-space> :CocAction<CR>
@@ -104,7 +104,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omnisharp', 'coc-python', 'coc-docker' , 'coc-pairs', 'coc-vetur' ]
+let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omnisharp', 'coc-python', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' ]
 
 " ============= Coc =================
 
