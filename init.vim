@@ -12,10 +12,6 @@ Plugin 'sheerun/vim-polyglot'
 
 " Intelisense
 Plugin 'neoclide/coc.nvim'
-" :CocInstall coc-json
-" :CocInstall coc-omnisharp
-" :CocInstall coc-python
-" :CocInstall coc-docker
 
 " Web
 Plugin 'mattn/emmet-vim'
@@ -33,7 +29,6 @@ Plugin 'ryanoasis/vim-devicons'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
-
 " ============= Preferences =================
 let mapleader = "\\"
 colorscheme dracula
@@ -84,6 +79,8 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omnisharp', 'coc-python', 'coc-docker' ]
 
 " ============= Coc =================
 
