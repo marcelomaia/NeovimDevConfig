@@ -1,15 +1,37 @@
 " START - Setting up Vundle - the vim plugin bundler
 " https://github.com/VundleVim/Vundle.vim/issues/769
 let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+if !exists("g:os")
+    if has("win64") || has("win32") || has("win16")
+        let is_windows = 1
+        let vundle_readme_file = '%LOCALAPPDATA%\nvim\Vundle.vim\README.md'
+    else
+        let is_windows = 0
+        let vundle_readme_file = '~/.vim/bundle/Vundle.vim/README.md'
+    endif
+endif
+
+let vundle_readme=expand(vundle_readme_file)
 if !filereadable(vundle_readme)
   echo "Installing Vundle.."
   echo ""
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  if is_windows == 1
+      let bundle_path = '%LOCALAPPDATA%\nvim'
+      silent !mkdir bundle_path
+  else
+      let bundle_path = '~/.vim/bundle'
+      silent !mkdir -p bundle_path
+  endif
+  silent !git clone https://github.com/VundleVim/Vundle.vim.git bundle_path
   let iCanHazVundle=0
 endif
-set rtp+=~/.vim/bundle/Vundle.vim/
+
+if is_windows == 1
+  set rtp+=%LOCALAPPDATA%\nvim\Vundle.vim\
+else
+  set rtp+=~/.vim/bundle/Vundle.vim/
+endif
+
 call vundle#rc()
 
 " let Vundle manage Vundle, required
