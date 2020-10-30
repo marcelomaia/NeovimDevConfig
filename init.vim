@@ -1,4 +1,4 @@
-source auto_install_vundle.vim
+source ~/.config/nvim/auto_install_vundle.vim
 call vundle#begin()
 " For any situation
 Plugin 'preservim/nerdtree'
@@ -63,6 +63,28 @@ autocmd InsertLeave * :setlocal relativenumber
 match ErrorMsg '\s\+$'
 " remove trailing whitespaces automatically
 autocmd BufWritePre * :%s/\s\+$//e
+" tab navigation
+" :tabedit file.txt
+noremap <Leader>1 1gt
+noremap <Leader>2 2gt
+noremap <Leader>3 3gt
+noremap <Leader>4 4gt
+noremap <Leader>5 5gt
+noremap <Leader>6 6gt
+noremap <Leader>7 7gt
+noremap <Leader>8 8gt
+noremap <Leader>9 9gt
+" vertical / horizontal resize
+noremap <Leader>> <c-w>10>  " vertical +
+noremap <Leader>< <c-w>10<  " vertical -
+noremap <Leader>+ <c-w>5+   " horizontal +
+noremap <Leader>- <c-w>5-   " horizontal -
+noremap <Leader>= <c-w>=
+" navigation between vsplit and split
+map <C-H> :wincmd h<CR>
+map <C-J> :wincmd j<CR>
+map <C-K> :wincmd k<CR>
+map <C-L> :wincmd l<CR>
 " ============= Preferences =================
 
 " ============= Coc =================
@@ -88,13 +110,7 @@ let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omn
 " ================NERDTree====================
 let NERDTreeShowHidden=1
 nmap <C-n> :NERDTreeToggle<CR>
-" navigation between tabs
-nmap  <C-t> :tabn<CR>
-" navigation between vsplit and split
-map <C-H> :wincmd h<CR>
-map <C-J> :wincmd j<CR>
-map <C-K> :wincmd k<CR>
-map <C-L> :wincmd l<CR>
+let NERDTreeIgnore=[ '\.git$' ]
 " ================NERDTree====================
 
 " ================ALE-Linting====================
