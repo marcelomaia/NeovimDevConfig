@@ -144,3 +144,14 @@ nmap <Leader>u <Plug>(GitGutterUndoHunk)
 let g:gitgutter_enabled=1
 let g:gitgutter_map_keys=0
 " ================GitGutter====================
+
+" ================Fugitive====================
+" gs  git status
+" gl: diff from right
+" gh: diff from left
+" gv: open vertical split to solve merge conflicts
+nmap <Leader>gs :G<CR>
+nmap <Leader>gl :diffget //3<CR>
+nmap <Leader>gh :diffget //2<CR>
+nmap <Leader>gv :Gvdiffsplit!<CR>
+" ================Fugitive====================

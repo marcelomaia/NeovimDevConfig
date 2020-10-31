@@ -1,0 +1,4 @@
+{
+    "snippets.textmateSnippetsRoots": ["~/.config/nvim/vscode-snippets"],
+    "codeLens.enable": true
+}

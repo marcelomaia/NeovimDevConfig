@@ -1,6 +1,7 @@
 #!/bin/bash
 
 mkdir -p ~/.config/nvim/after
+mkdir -p ~/.config/nvim/vscode-snippets
 
 echo "Copying init.vim..."
 cp ./init.vim ~/.config/nvim/init.vim
@@ -8,5 +9,14 @@ cp ./auto_install_vundle.vim ~/.config/nvim/auto_install_vundle.vim
 
 echo "Copying language specific files..."
 cp -r ./ftplugin ~/.config/nvim/after/
+
+echo "Copying Utilsnips snippets..."
+cp -r ./snippets/*.snippets ~/.config/coc/ultisnips/
+
+echo "Copying Vscode snippets..."
+cp -r ./snippets/*.json ~/.config/nvim/vscode-snippets
+
+echo "Copying Coc settings..."
+cp ./coc-settings.json ~/.config/nvim/coc-settings.json
 
 # TODO: ask if is desired to change caps for esc
