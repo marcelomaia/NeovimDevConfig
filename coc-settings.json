@@ -1,4 +1,5 @@
 {
     "snippets.textmateSnippetsRoots": ["~/.config/nvim/vscode-snippets"],
-    "codeLens.enable": true
+    "codeLens.enable": true,
+    "snippets.extends": {"vue": ["quasar"]}
 }

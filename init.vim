@@ -151,6 +151,7 @@ let g:gitgutter_map_keys=0
 " gh: diff from left
 " gv: open vertical split to solve merge conflicts
 nmap <Leader>gs :G<CR>
+nmap <Leader>gco :Gco<CR>
 nmap <Leader>gl :diffget //3<CR>
 nmap <Leader>gh :diffget //2<CR>
 nmap <Leader>gv :Gvdiffsplit!<CR>
