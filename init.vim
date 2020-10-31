@@ -1,4 +1,28 @@
-source ~/.config/nvim/auto_install_vundle.vim
+" TODO: change prettier to <Leader>l for vue, js jsx...
+" START - Setting up Vundle - the vim plugin bundler
+" https://github.com/VundleVim/Vundle.vim/issues/769
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+if !filereadable(vundle_readme)
+  echo "Installing Vundle.."
+  echo ""
+  silent !mkdir -p ~/.vim/bundle
+  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+  let iCanHazVundle=0
+endif
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#rc()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+if iCanHazVundle == 0
+  echo "Installing Bundles, please ignore key map error messages"
+  echo ""
+  :source $MYVIMRC
+  :PluginInstall
+endif
+" END - Setting up Vundle - the vim plugin bundler
+
 call vundle#begin()
 " For any situation
 Plugin 'preservim/nerdtree'
@@ -14,7 +38,7 @@ Plugin 'neoclide/coc.nvim'
 
 " Web
 Plugin 'mattn/emmet-vim'
-
+Plugin 'prettier/vim-prettier'
 " Python
 " C#
 Plugin 'OmniSharp/omnisharp-vim'
@@ -110,7 +134,7 @@ let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omn
 " ================NERDTree====================
 let NERDTreeShowHidden=1
 nmap <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=[ '\.git$' ]
+let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__']
 " ================NERDTree====================
 
 " ================ALE-Linting====================
@@ -137,10 +161,10 @@ let g:ctrlp_show_hidden = 1
 
 " ================GitGutter====================
 " Go to next git change
-nmap <Leader>f <Plug>(GitGutterNextHunk)
-nmap <Leader>d <Plug>(GitGutterPrevHunk)
-nmap <Leader>g <Plug>(GitGutterPreviewHunk)
-nmap <Leader>u <Plug>(GitGutterUndoHunk)
+nmap <Leader>gk <Plug>(GitGutterNextHunk)
+nmap <Leader>gj <Plug>(GitGutterPrevHunk)
+nmap <Leader>gg <Plug>(GitGutterPreviewHunk)
+nmap <Leader>gu <Plug>(GitGutterUndoHunk)
 let g:gitgutter_enabled=1
 let g:gitgutter_map_keys=0
 " ================GitGutter====================
@@ -151,7 +175,7 @@ let g:gitgutter_map_keys=0
 " gh: diff from left
 " gv: open vertical split to solve merge conflicts
 nmap <Leader>gs :G<CR>
-nmap <Leader>gco :Gco<CR>
+nmap <Leader>gc :Gco<CR>
 nmap <Leader>gl :diffget //3<CR>
 nmap <Leader>gh :diffget //2<CR>
 nmap <Leader>gv :Gvdiffsplit!<CR>
