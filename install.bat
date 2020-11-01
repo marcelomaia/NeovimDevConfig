@@ -7,4 +7,3 @@ copy init.vim %LOCALAPPDATA%\nvim\init.vim
 
 echo "Copying language specific files..."
 xcopy ftplugin %LOCALAPPDATA%\nvim\after
-
