@@ -5,3 +5,8 @@ repos:
       - id: commitlint
         stages: [commit-msg]
         additional_dependencies: ['@commitlint/config-angular']
+- repo: https://github.com/Vimjas/vint
+  rev: v0.4a4
+  hooks:
+      - id: vint
+        stages: ['commit-msg']
