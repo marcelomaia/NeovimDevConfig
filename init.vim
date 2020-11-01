@@ -32,13 +32,13 @@ Plugin 'ctrlpvim/ctrlp.vim' " Search files
 Plugin 'scrooloose/nerdcommenter' " Comments
 Plugin 'sheerun/vim-polyglot' " Syntax highlight
 Plugin 'APZelos/blamer.nvim'  " like git lens from vscode
-
 " Intelisense
 Plugin 'neoclide/coc.nvim'
 
 " Web
 Plugin 'mattn/emmet-vim'
 Plugin 'prettier/vim-prettier'
+Plugin 'ap/vim-css-color' " hex colors
 " Python
 " C#
 Plugin 'OmniSharp/omnisharp-vim'
@@ -80,7 +80,6 @@ map <Leader>l gg=G<C-o><C-o>
 autocmd FileType javascript nnoremap <Leader>l :Prettier<CR>
 autocmd FileType json nnoremap <Leader>l :Prettier<CR>
 autocmd FileType typescript nnoremap <Leader>l :Prettier<CR>
-autocmd FileType *.vue nnoremap <Leader>l :Prettier<CR>
 autocmd FileType scss nnoremap <Leader>l :Prettier<CR>
 autocmd FileType css nnoremap <Leader>l :Prettier<CR>
 " Move visual selection
@@ -116,6 +115,7 @@ map <C-H> :wincmd h<CR>
 map <C-J> :wincmd j<CR>
 map <C-K> :wincmd k<CR>
 map <C-L> :wincmd l<CR>
+" hex colors
 " ============= Preferences =================
 
 " ============= Coc =================
@@ -127,6 +127,8 @@ nmap <silent> <Leader>, <Plug>(coc-diagnostic-next-error)
 
 nmap <F2> <Plug>(coc-rename)
 nmap <silent> <c-space> :CocAction<CR>
+
+nmap <Leader>l <Plug>(coc-format)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
