@@ -1,4 +1,3 @@
-" TODO: change prettier to <Leader>l for vue, js jsx...
 " START - Setting up Vundle - the vim plugin bundler
 " https://github.com/VundleVim/Vundle.vim/issues/769
 let iCanHazVundle=1
@@ -32,6 +31,7 @@ Plugin 'tpope/vim-fugitive' " NERDTree git
 Plugin 'ctrlpvim/ctrlp.vim' " Search files
 Plugin 'scrooloose/nerdcommenter' " Comments
 Plugin 'sheerun/vim-polyglot' " Syntax highlight
+Plugin 'APZelos/blamer.nvim'  " like git lens from vscode
 
 " Intelisense
 Plugin 'neoclide/coc.nvim'
@@ -66,16 +66,23 @@ set hlsearch
 set wildmenu
 set title
 set ignorecase " case insensitive on search
+set cursorline
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
 set updatetime=300
 filetype plugin on " enables ftplugin
 
-" Identation
+" Identation default
 set expandtab
 set shiftwidth=4
 set softtabstop=4
 map <Leader>l gg=G<C-o><C-o>
+autocmd FileType javascript nnoremap <Leader>l :Prettier<CR>
+autocmd FileType json nnoremap <Leader>l :Prettier<CR>
+autocmd FileType typescript nnoremap <Leader>l :Prettier<CR>
+autocmd FileType *.vue nnoremap <Leader>l :Prettier<CR>
+autocmd FileType scss nnoremap <Leader>l :Prettier<CR>
+autocmd FileType css nnoremap <Leader>l :Prettier<CR>
 " Move visual selection
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -170,13 +177,22 @@ let g:gitgutter_map_keys=0
 " ================GitGutter====================
 
 " ================Fugitive====================
-" gs  git status
+" gs  git status 's' to stage, 'u' to unstage
+" gc git commit (type 'commit' and a template message will be provided)
+" gp git push
 " gl: diff from right
 " gh: diff from left
 " gv: open vertical split to solve merge conflicts
 nmap <Leader>gs :G<CR>
 nmap <Leader>gc :Gco<CR>
+nmap <Leader>gp :Gpush<CR>
 nmap <Leader>gl :diffget //3<CR>
 nmap <Leader>gh :diffget //2<CR>
 nmap <Leader>gv :Gvdiffsplit!<CR>
 " ================Fugitive====================
+
+" ================Blamer====================
+let g:blamer_enabled = 1
+let g:blamer_delay = 500
+let g:blamer_show_in_insert_modes = 0
+" ================Blamer====================
