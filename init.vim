@@ -184,6 +184,7 @@ let g:gitgutter_map_keys=0
 " ================Fugitive====================
 " gs  git status 's' to stage, 'u' to unstage
 " gc git commit (type 'commit' and a template message will be provided)
+" gca git commit --amend
 " gp git push
 " gl: diff from right
 " gh: diff from left
@@ -191,6 +192,7 @@ let g:gitgutter_map_keys=0
 " gv: Show file history
 nmap <Leader>gs :G<CR>
 nmap <Leader>gc :Gco<CR>
+nmap <Leader>gca :Gco --amend<CR>
 nmap <Leader>gp :Gpush<CR>
 nmap <Leader>gl :diffget //3<CR>
 nmap <Leader>gh :diffget //2<CR>
