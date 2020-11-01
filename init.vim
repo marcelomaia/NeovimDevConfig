@@ -33,6 +33,7 @@ Plugin 'ctrlpvim/ctrlp.vim' " Search files
 Plugin 'scrooloose/nerdcommenter' " Comments
 Plugin 'sheerun/vim-polyglot' " Syntax highlight
 Plugin 'APZelos/blamer.nvim'  " like git lens from vscode
+Plugin 'honza/vim-snippets'   " snippets
 " Intelisense
 Plugin 'neoclide/coc.nvim'
 
@@ -137,7 +138,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omnisharp', 'coc-python', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' ]
+let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omnisharp', 'coc-python', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint']
 
 " ============= Coc =================
 
@@ -151,7 +152,8 @@ let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__']
 " nmap <silent> <Leader>k <Plug>(ale_previous_wrap) replaced by coc-diagnostic-prev
 " nmap <silent> <Leader>j <Plug>(ale_next_wrap) replaced by coc-diagnostic-next
 " nmap <silent> <Leader>l <Plug>(ale_fix) replace by coc-action
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'json': ['prettier']}
+let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'json': ['prettier'], 'vue': ['eslint']}
+let g:ale_linters = {'javascript': ['eslint']}
 " ================ALE-Linting====================
 
 " ================Emmet====================
