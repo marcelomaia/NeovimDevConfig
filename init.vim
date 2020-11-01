@@ -28,6 +28,7 @@ Plugin 'preservim/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin' " NERDTree git
 Plugin 'airblade/vim-gitgutter' " NERDTree git
 Plugin 'tpope/vim-fugitive' " NERDTree git
+Plugin 'junegunn/gv.vim' " Git history
 Plugin 'ctrlpvim/ctrlp.vim' " Search files
 Plugin 'scrooloose/nerdcommenter' " Comments
 Plugin 'sheerun/vim-polyglot' " Syntax highlight
@@ -170,8 +171,8 @@ let g:ctrlp_show_hidden = 1
 
 " ================GitGutter====================
 " Go to next git change
-nmap <Leader>gk <Plug>(GitGutterNextHunk)
-nmap <Leader>gj <Plug>(GitGutterPrevHunk)
+nmap <Leader>gj <Plug>(GitGutterNextHunk)
+nmap <Leader>gk <Plug>(GitGutterPrevHunk)
 nmap <Leader>gg <Plug>(GitGutterPreviewHunk)
 nmap <Leader>gu <Plug>(GitGutterUndoHunk)
 let g:gitgutter_enabled=1
@@ -184,13 +185,15 @@ let g:gitgutter_map_keys=0
 " gp git push
 " gl: diff from right
 " gh: diff from left
-" gv: open vertical split to solve merge conflicts
+" gd: open vertical split to solve merge conflicts
+" gv: Show file history
 nmap <Leader>gs :G<CR>
 nmap <Leader>gc :Gco<CR>
 nmap <Leader>gp :Gpush<CR>
 nmap <Leader>gl :diffget //3<CR>
 nmap <Leader>gh :diffget //2<CR>
-nmap <Leader>gv :Gvdiffsplit!<CR>
+nmap <Leader>gd :Gvdiffsplit!<CR>
+nmap <Leader>gv :GV!<CR>
 " ================Fugitive====================
 
 " ================Blamer====================
@@ -198,3 +201,22 @@ let g:blamer_enabled = 1
 let g:blamer_delay = 500
 let g:blamer_show_in_insert_modes = 0
 " ================Blamer====================
+
+" ================Folding====================
+" Useful for hiding and showing methods or classes
+" try zo/zc to open/close fold
+" try zk/zj to go up/down in folds
+set foldmethod=indent
+set foldlevel=99
+noremap z1 :set foldlevel=0<CR>
+noremap z2 :set foldlevel=1<CR>
+noremap z3 :set foldlevel=2<CR>
+noremap z4 :set foldlevel=3<CR>
+noremap z5 :set foldlevel=4<CR>
+noremap z6 :set foldlevel=5<CR>
+noremap z7 :set foldlevel=6<CR>
+noremap z8 :set foldlevel=7<CR>
+noremap z9 :set foldlevel=8<CR>
+
+noremap z0 :set foldlevel=99<CR>
+" ================Folding====================
