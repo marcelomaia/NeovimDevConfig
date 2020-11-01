@@ -9,5 +9,11 @@ repos:
   rev: v0.4a4
   hooks:
       - id: vint
-        files: init.vim
-        stages: ['commit-msg']
+        files: ./
+        args: [--enable-neovim, --color]
+- repo: https://github.com/pre-commit/pre-commit-hooks
+  rev: v2.3.0
+  hooks:
+    - id: check-yaml
+    - id: end-of-file-fixer
+    - id: trailing-whitespace
