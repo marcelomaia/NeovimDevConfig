@@ -66,8 +66,8 @@
 
 ### Useful shortcuts
 
-- \<c-space\> - display code actions like refactoring and fix errors
-- \<c-p\>     - quickly find file
+- \<Control-space\> - display code actions like refactoring and fix errors
+- \<Control-p\>     - quickly find file
 - \<Leader\>l          - code indenting
 - K/J         - move a code block up/down
 
@@ -102,10 +102,10 @@
 
 ### Window and tab navigation
 
-- \<c-l\> - go to -> window
-- \<c-h\> - go to <- window
-- \<c-k\> - go to ^ window
-- \<c-j\> - go to bottom window
+- \<Control-l\> - go to -> window
+- \<Control-h\> - go to <- window
+- \<Control-k\> - go to ^ window
+- \<Control-j\> - go to bottom window
 - \<Leader\>1    - go to first tab
 - \<Leader\>2    - go to second tab and so on...
 - \<Leader\>>    - vertical resize +

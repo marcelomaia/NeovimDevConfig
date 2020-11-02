@@ -132,13 +132,21 @@ map #  <Plug>(incsearch-nohl-#)
 map g* <Plug>(incsearch-nohl-g*)
 map g# <Plug>(incsearch-nohl-g#)
 
+" Uncomment for fuzzy search
+"map z/ <Plug>(incsearch-fuzzy-/)
+"map z? <Plug>(incsearch-fuzzy-?)
+"map zg/ <Plug>(incsearch-fuzzy-stay)
+
 map z/ <Plug>(incsearch-fuzzyspell-/)
 map z? <Plug>(incsearch-fuzzyspell-?)
 map zg/ <Plug>(incsearch-fuzzyspell-stay)
 " Spelling
-noremap <Leader>sp :setlocal spell spelllang=en_us<CR>
+function SetLocalSpellLang() abort
+    setlocal spell spelllang=en_us
+    set complete+=kspell
+endfunction
+noremap <Leader>sp :.call SetLocalSpellLang()<CR>
 noremap <Leader>sp! :setlocal spell!<CR>
-set complete+=kspell
 autocmd FileType gitcommit setlocal spell spelllang=en_us<CR>
 " Force hjkl
 nnoremap <Left> :echoe "Use h"<CR>
