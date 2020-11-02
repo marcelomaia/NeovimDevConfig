@@ -1,18 +1,18 @@
 repos:
 - repo: https://github.com/alessandrojcm/commitlint-pre-commit-hook
-  rev: v2.2.0
+  rev: v3.0.0
   hooks:
       - id: commitlint
         stages: [commit-msg]
         additional_dependencies: ['@commitlint/config-angular']
 - repo: https://github.com/Vimjas/vint
-  rev: v0.4a4
+  rev: v0.4a3
   hooks:
       - id: vint
         files: ^vim/
         args: [--enable-neovim, --color]
 - repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v2.3.0
+  rev: v3.3.0
   hooks:
     - id: check-yaml
     - id: end-of-file-fixer

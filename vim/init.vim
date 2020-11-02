@@ -34,6 +34,10 @@ Plugin 'scrooloose/nerdcommenter' " Comments
 Plugin 'sheerun/vim-polyglot' " Syntax highlight
 Plugin 'APZelos/blamer.nvim'  " like git lens from vscode
 Plugin 'honza/vim-snippets'   " snippets
+Plugin 'editorconfig/editorconfig-vim' " keep coding style across IDES
+Plugin 'majutsushi/tagbar' " get an overview of current file structure
+Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Markdown preview in browser
+Plugin 'yggdroot/indentline' " show a vertical line for indents
 " Intelisense
 Plugin 'neoclide/coc.nvim'
 
@@ -119,7 +123,8 @@ map <C-H> :wincmd h<CR>
 map <C-J> :wincmd j<CR>
 map <C-K> :wincmd k<CR>
 map <C-L> :wincmd l<CR>
-" hex colors
+" start markdown automatically
+let g:mkdp_auto_start = 1
 " ============= Preferences =================
 
 " ============= Coc =================
@@ -226,3 +231,12 @@ noremap z9 :set foldlevel=8<CR>
 
 noremap z0 :set foldlevel=99<CR>
 " ================Folding====================
+
+" ================EditorConfig====================
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
+" ================EditorConfig====================
+
+" ================Tagbar====================
+nnoremap <silent> <Leader>t :TagbarToggle<CR>
+autocmd VimEnter * nested :call tagbar#autoopen(1)
+" ================Tagbar====================

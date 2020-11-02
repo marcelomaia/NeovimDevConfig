@@ -17,12 +17,14 @@
 
 - [Jedi](https://github.com/davidhalter/jedi)
 - [Virtualenv](https://github.com/pypa/virtualenv)
+- [Ctags](http://ctags.sourceforge.net/)
 
 ## Features
 
 ### For all languages
 
 - Nice lint integration (vimfiles, json, vue, js, python, c#, markdown)
+- Snippets for many languages
 
 ### For Python
 
@@ -40,10 +42,10 @@
 
 ### Window and tab navigation
 
-- <c-l> - go to -> window
-- <c-h> - go to <- window
-- <c-k> - go to ^ window
-- <c-j> - go to bottom window
+- \<c-l\> - go to -> window
+- \<c-h\> - go to <- window
+- \<c-k\> - go to ^ window
+- \<c-j\> - go to bottom window
 - ,1    - go to first tab
 - ,2    - go to second tab and so on...
 - ,>    - vertical resize +
