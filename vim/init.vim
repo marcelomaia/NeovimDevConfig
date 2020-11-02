@@ -24,29 +24,28 @@ endif
 
 call vundle#begin()
 " For any situation
-Plugin 'preservim/nerdtree'
+Plugin 'APZelos/blamer.nvim'  " like git lens from vscode
 Plugin 'Xuyuanp/nerdtree-git-plugin' " NERDTree git
 Plugin 'airblade/vim-gitgutter' " NERDTree git
-Plugin 'tpope/vim-fugitive' " NERDTree git
-Plugin 'junegunn/gv.vim' " Git history
 Plugin 'ctrlpvim/ctrlp.vim' " Search files
+Plugin 'editorconfig/editorconfig-vim' " keep coding style across IDES
+Plugin 'haya14busa/incsearch-fuzzy.vim'  " fuzzy search
+Plugin 'haya14busa/incsearch.vim' " for a better experience in searching
+Plugin 'honza/vim-snippets'   " snippets
+Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Markdown preview in browser
+Plugin 'junegunn/gv.vim' " Git history
+Plugin 'majutsushi/tagbar' " get an overview of current file structure
+Plugin 'neoclide/coc.nvim' " for code intellisense
+Plugin 'preservim/nerdtree'
 Plugin 'scrooloose/nerdcommenter' " Comments
 Plugin 'sheerun/vim-polyglot' " Syntax highlight
-Plugin 'APZelos/blamer.nvim'  " like git lens from vscode
-Plugin 'honza/vim-snippets'   " snippets
-Plugin 'editorconfig/editorconfig-vim' " keep coding style across IDES
-Plugin 'majutsushi/tagbar' " get an overview of current file structure
-Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Markdown preview in browser
+Plugin 'tpope/vim-fugitive' " NERDTree git
 Plugin 'yggdroot/indentline' " show a vertical line for indents
-Plugin 'haya14busa/incsearch.vim' " for a better experience in searching
-Plugin 'haya14busa/incsearch-fuzzy.vim'  " fuzzy search
-" Intelisense
-Plugin 'neoclide/coc.nvim'
 
 " Web
+Plugin 'ap/vim-css-color' " hex colors
 Plugin 'mattn/emmet-vim'
 Plugin 'prettier/vim-prettier'
-Plugin 'ap/vim-css-color' " hex colors
 " Python
 " C#
 Plugin 'OmniSharp/omnisharp-vim'
@@ -139,6 +138,13 @@ map zg/ <Plug>(incsearch-fuzzyspell-stay)
 " Spelling
 noremap <Leader>sp :setlocal spell spelllang=en_us<CR>
 noremap <Leader>sp! :setlocal spell!<CR>
+set complete+=kspell
+autocmd FileType gitcommit setlocal spell spelllang=en_us<CR>
+" Force hjkl
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
 " ============= Preferences =================
 
 " ============= Coc =================
@@ -252,7 +258,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " ================Tagbar====================
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
-"autocmd VimEnter * nested :call tagbar#autoopen(1)
+autocmd VimEnter * nested :call tagbar#autoopen(1)
 " ================Tagbar====================
 
 " ================Markdown====================

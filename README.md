@@ -6,31 +6,43 @@
 - Q: It's better than a paid IDE?
 - A: Sure bro!
 
-- Q: Which leader key is used for this project?
-- A: slash -> \ because it's next to CTRL.
+## Leader key: '\\'
 
 ## Plugins
 
 - For any situation:
+  - APZelos/blamer.nvim
   - Xuyuanp/nerdtree-git-plugin
-  - preservim/nerdtree
   - airblade/vim-gitgutter
-  - tpope/vim-fugitive
-  - junegunn/gv.vim
   - ctrlpvim/ctrlp.vim
+  - editorconfig/editorconfig-vim
+  - haya14busa/incsearch.vim
+  - honza/vim-snippets
+  - iamcco/markdown-preview.nvim
+  - junegunn/gv.vim
+  - majutsushi/tagbar
+  - neoclide/coc.nvim
+  - preservim/nerdtree
   - scrooloose/nerdcommenter
   - sheerun/vim-polyglot
-  - APZelos/blamer.nvim
-  - honza/vim-snippets
-  - editorconfig/editorconfig-vim
-  - majutsushi/tagbar
-  - iamcco/markdown-preview.nvim
+  - tpope/vim-fugitive
   - yggdroot/indentline
-  - haya14busa/incsearch.vim
+    - coc-docker
+    - coc-esli
+    - coc-json
+    - coc-markdownlint
+    - coc-omnisharp
+    - coc-pairs
+    - coc-python
+    - coc-snippets
+    - coc-vetur
+    - coc-vimlsp
+- For linting
+  - dense-analysis/ale
 - For web development
-  - mattn/emmet-vim
-  - prettier/vim-prettier
   - ap/vim-css-color
+  - eattn/emmet-vim
+  - prettier/vim-prettier
 - Themes
   - dracula/vim
   - ryanoasis/vim-devicons
@@ -81,7 +93,7 @@
 - \<Leader\>gd  - git diff(useful for merge conflicts)
 - \<Leader\>gl  - accepts diff from right
 - \<Leader\>gh  - accepts diff from left
-- \<Leader\>gc  - git commit (type "commit" in commit dialog to use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/))
+- \<Leader\>gc  - git commit (type "commit" to use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/))
 - \<Leader\>gv  - Show file history
 - \<Leader\>gj  - go to next modification in your source code
 - \<Leader\>gk  - go to previous modification in your source code
