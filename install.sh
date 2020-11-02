@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 mkdir -p ~/.config/nvim/after
 mkdir -p ~/.config/nvim/vscode-snippets

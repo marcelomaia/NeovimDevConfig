@@ -238,5 +238,5 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " ================Tagbar====================
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
-autocmd VimEnter * nested :call tagbar#autoopen(1)
+"autocmd VimEnter * nested :call tagbar#autoopen(1)
 " ================Tagbar====================
