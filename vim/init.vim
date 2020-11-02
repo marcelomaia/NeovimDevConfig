@@ -38,6 +38,8 @@ Plugin 'editorconfig/editorconfig-vim' " keep coding style across IDES
 Plugin 'majutsushi/tagbar' " get an overview of current file structure
 Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Markdown preview in browser
 Plugin 'yggdroot/indentline' " show a vertical line for indents
+Plugin 'haya14busa/incsearch.vim' " for a better experience in searching
+Plugin 'haya14busa/incsearch-fuzzy.vim'  " fuzzy search
 " Intelisense
 Plugin 'neoclide/coc.nvim'
 
@@ -67,8 +69,6 @@ nnoremap w2 :w<CR>
 nnoremap wq1 :wq<CR>
 set confirm
 set number
-set incsearch
-set hlsearch
 set wildmenu
 set title
 set ignorecase " case insensitive on search
@@ -78,7 +78,7 @@ set cursorline
 set updatetime=300
 filetype plugin on " enables ftplugin
 
-" Identation default
+" Indentation default
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -123,8 +123,22 @@ map <C-H> :wincmd h<CR>
 map <C-J> :wincmd j<CR>
 map <C-K> :wincmd k<CR>
 map <C-L> :wincmd l<CR>
-" start markdown automatically
-let g:mkdp_auto_start = 1
+" hlsearch
+set hlsearch
+let g:incsearch#auto_nohlsearch = 1
+map n  <Plug>(incsearch-nohl-n)
+map N  <Plug>(incsearch-nohl-N)
+map *  <Plug>(incsearch-nohl-*)
+map #  <Plug>(incsearch-nohl-#)
+map g* <Plug>(incsearch-nohl-g*)
+map g# <Plug>(incsearch-nohl-g#)
+
+map z/ <Plug>(incsearch-fuzzyspell-/)
+map z? <Plug>(incsearch-fuzzyspell-?)
+map zg/ <Plug>(incsearch-fuzzyspell-stay)
+" Spelling
+noremap <Leader>sp :setlocal spell spelllang=en_us<CR>
+noremap <Leader>sp! :setlocal spell!<CR>
 " ============= Preferences =================
 
 " ============= Coc =================
@@ -145,7 +159,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omnisharp', 'coc-python', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint']
+let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omnisharp', 'coc-python', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', ]
 
 " ============= Coc =================
 
@@ -240,3 +254,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 nnoremap <silent> <Leader>t :TagbarToggle<CR>
 "autocmd VimEnter * nested :call tagbar#autoopen(1)
 " ================Tagbar====================
+
+" ================Markdown====================
+nmap <Leader>mp <Plug>MarkdownPreview
+" ================Markdown====================

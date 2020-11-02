@@ -6,6 +6,9 @@
 - Q: It's better than a paid IDE?
 - A: Sure bro!
 
+- Q: Which leader key is used for this project?
+- A: slash -> \ because it's next to CTRL.
+
 ## Plugins
 
 - For any situation:
@@ -23,6 +26,7 @@
   - majutsushi/tagbar
   - iamcco/markdown-preview.nvim
   - yggdroot/indentline
+  - haya14busa/incsearch.vim
 - For web development
   - mattn/emmet-vim
   - prettier/vim-prettier
@@ -38,7 +42,7 @@
 ### Mandatory
 
 - NeoVIM
-- Nodejs >= 12. Please preffer [NVM](https://github.com/nvm-sh/nvm)
+- Nodejs >= 12. Please prefer [NVM](https://github.com/nvm-sh/nvm)
 
 ### Optional
 
@@ -52,7 +56,7 @@
 
 - \<c-space\> - display code actions like refactoring and fix errors
 - \<c-p\>     - quickly find file
-- ,l          - code indenting
+- \<Leader\>l          - code indenting
 - K/J         - move a code block up/down
 
 ### For all languages
@@ -62,8 +66,8 @@
 
 ### For Python
 
-- TODO: auto sugest imports
-- Intelisense from coc-python
+- TODO: auto suggest imports
+- Intellisense from coc-python
   - refactoring
   - extract variable
   - sort imports
@@ -73,16 +77,16 @@
 
 ### Git
 
-- ,gs  - git status
-- ,gd  - git diff(usefull for merge conflicts)
-- ,gl  - accepts diff from right
-- ,gh  - accepts diff from left
-- ,gc  - git commit (type "commit" in commit dialog to use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/))
-- ,gv  - Show file history
-- ,gj  - go to next modification in your source code
-- ,gk  - go to previous modification in your source code
-- ,gg  - preview git modification
-- ,gu  - undo git modification
+- \<Leader\>gs  - git status
+- \<Leader\>gd  - git diff(useful for merge conflicts)
+- \<Leader\>gl  - accepts diff from right
+- \<Leader\>gh  - accepts diff from left
+- \<Leader\>gc  - git commit (type "commit" in commit dialog to use [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/))
+- \<Leader\>gv  - Show file history
+- \<Leader\>gj  - go to next modification in your source code
+- \<Leader\>gk  - go to previous modification in your source code
+- \<Leader\>gg  - preview git modification
+- \<Leader\>gu  - undo git modification
 
 ### Window and tab navigation
 
@@ -90,17 +94,17 @@
 - \<c-h\> - go to <- window
 - \<c-k\> - go to ^ window
 - \<c-j\> - go to bottom window
-- ,1    - go to first tab
-- ,2    - go to second tab and so on...
-- ,>    - vertical resize +
-- ,<    - vertical resize -
-- ,+    - horizontal resize +
-- ,-    - horizontal resize -
-- ,=    - all splits equal
+- \<Leader\>1    - go to first tab
+- \<Leader\>2    - go to second tab and so on...
+- \<Leader\>>    - vertical resize +
+- \<Leader\><    - vertical resize -
+- \<Leader\>+    - horizontal resize +
+- \<Leader\>-    - horizontal resize -
+- \<Leader\>=    - all splits equal
 
 ### Folding
 
-Assiming that your code is well idented, you can quickly hide and show methods/classes
+Assuming that your code is well indented, you can quickly hide and show methods/classes
 
 - zo/zc - open/close fold
 - zk/zj - to go up/down in folds
