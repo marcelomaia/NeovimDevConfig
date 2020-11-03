@@ -44,7 +44,6 @@ Plugin 'yggdroot/indentline' " show a vertical line for indents
 
 " Web
 Plugin 'ap/vim-css-color' " hex colors
-Plugin 'mattn/emmet-vim'
 Plugin 'prettier/vim-prettier'
 " Python
 " C#
@@ -66,6 +65,7 @@ let g:airline_theme='wombat'
 noremap q1 :q<CR>
 nnoremap w2 :w<CR>
 nnoremap wq1 :wq<CR>
+set splitright
 set confirm
 set number
 set wildmenu
@@ -122,6 +122,11 @@ map <C-H> :wincmd h<CR>
 map <C-J> :wincmd j<CR>
 map <C-K> :wincmd k<CR>
 map <C-L> :wincmd l<CR>
+" my keyboard is very small, so it makes sense
+map <C-Left> :wincmd h<CR>
+map <C-Down> :wincmd j<CR>
+map <C-Up> :wincmd k<CR>
+map <C-Right> :wincmd l<CR>
 " hlsearch
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
@@ -156,11 +161,11 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 " ============= Preferences =================
 
 " ============= Coc =================
-" inoremap <silent><expr> <c-space> coc#refresh() TODO: whats this does?
-nmap <silent> <Leader>j <Plug>(coc-diagnostic-prev)
-nmap <silent> <Leader>k <Plug>(coc-diagnostic-next)
-nmap <silent> <Leader>m <Plug>(coc-diagnostic-prev-error)
-nmap <silent> <Leader>, <Plug>(coc-diagnostic-next-error)
+inoremap <silent><expr> <tab> coc#refresh()
+nmap <silent> [w <Plug>(coc-diagnostic-prev)
+nmap <silent> ]w <Plug>(coc-diagnostic-next)
+nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
+nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 nmap <F2> <Plug>(coc-rename)
 nmap <silent> <c-space> :CocAction<CR>
@@ -173,20 +178,23 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', ]
+let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-emmet', 'coc-css', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', ]
 
 " ============= Coc =================
 
 " ================NERDTree====================
 let NERDTreeShowHidden=1
 nmap <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__']
+let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__', 'CodeAnalysis', 'out']
 " ================NERDTree====================
 
 " ================ALE-Linting====================
 " nmap <silent> <Leader>k <Plug>(ale_previous_wrap) replaced by coc-diagnostic-prev
 " nmap <silent> <Leader>j <Plug>(ale_next_wrap) replaced by coc-diagnostic-next
 " nmap <silent> <Leader>l <Plug>(ale_fix) replace by coc-action
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%]%code:% %s [%severity%]'
 let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'json': ['prettier'], 'vue': ['eslint']}
 let g:ale_linters = {'javascript': ['eslint']}
 " ================ALE-Linting====================
@@ -208,10 +216,10 @@ let g:ctrlp_show_hidden = 1
 
 " ================GitGutter====================
 " Go to next git change
-nmap <Leader>gj <Plug>(GitGutterNextHunk)
-nmap <Leader>gk <Plug>(GitGutterPrevHunk)
-nmap <Leader>gg <Plug>(GitGutterPreviewHunk)
-nmap <Leader>gu <Plug>(GitGutterUndoHunk)
+nmap [g <Plug>(GitGutterPrevHunk)
+nmap ]g <Plug>(GitGutterNextHunk)
+nmap <Leader-g>g <Plug>(GitGutterPreviewHunk)
+nmap <Leader-g>u <Plug>(GitGutterUndoHunk)
 let g:gitgutter_enabled=1
 let g:gitgutter_map_keys=0
 " ================GitGutter====================

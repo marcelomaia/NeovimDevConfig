@@ -2,5 +2,6 @@
     "snippets.textmateSnippetsRoots": ["~/.config/nvim/vscode-snippets"],
     "codeLens.enable": true,
     "snippets.extends": { "vue": ["quasar"] },
-    "coc.preferences.rootPatterns": [".git", ".vim", ".projections.json"]
+    "coc.preferences.rootPatterns": [".git", ".vim", ".projections.json"],
+    "diagnostic.format": "[%source]%code: %message [%severity]"
 }

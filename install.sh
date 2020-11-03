@@ -3,6 +3,7 @@
 mkdir -p ~/.config/nvim/after
 mkdir -p ~/.config/nvim/vscode-snippets
 mkdir -p ~/.config/coc/ultisnips/
+mkdir -p ~/.omnisharp
 
 echo "Copying init.vim..."
 cp ./vim/init.vim ~/.config/nvim/init.vim
@@ -19,4 +20,6 @@ cp -r ./snippets/*.json ~/.config/nvim/vscode-snippets
 echo "Copying Coc settings..."
 cp ./settings/coc-settings.json ~/.config/nvim/coc-settings.json
 
+echo "Copying Omnisharp settings..."
+cp ./settings/omnisharp.json ~/.omnisharp
 # TODO: ask if is desired to change caps for esc

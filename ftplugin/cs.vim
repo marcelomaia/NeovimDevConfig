@@ -5,9 +5,15 @@
 " The following commands are contextual, based on the cursor position.
 
 let b:ale_linters = { 'cs': ['OmniSharp'] }
+let b:OmniSharp_diagnostic_exclude_paths = [
+\ 'obj\\',
+\ '[Tt]emp\\',
+\ '\.nuget\\',
+\ '\<AssemblyInfo\.cs\>'
+\]
 
-nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
-nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+nmap <silent> [w <Plug>(ale_previous_wrap)
+nmap <silent> ]w <Plug>(ale_next_wrap)
 
 nmap <silent> <buffer> gd <Plug>(omnisharp_go_to_definition)
 nmap <silent> <buffer> <Leader>f1 <Plug>(omnisharp_find_usages)
