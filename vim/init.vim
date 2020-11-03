@@ -147,12 +147,12 @@ function SetLocalSpellLang() abort
 endfunction
 noremap <Leader>sp :.call SetLocalSpellLang()<CR>
 noremap <Leader>sp! :setlocal spell!<CR>
-autocmd FileType gitcommit setlocal spell spelllang=en_us<CR>
+autocmd FileType gitcommit setlocal spell spelllang=en_us
 " Force hjkl
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
+"nnoremap <Left> :echoe "Use h"<CR>
+"nnoremap <Right> :echoe "Use l"<CR>
+"nnoremap <Up> :echoe "Use k"<CR>
+"nnoremap <Down> :echoe "Use j"<CR>
 " ============= Preferences =================
 
 " ============= Coc =================
@@ -173,7 +173,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-omnisharp', 'coc-python', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', ]
+let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', ]
 
 " ============= Coc =================
 

@@ -6,6 +6,9 @@
 
 let b:ale_linters = { 'cs': ['OmniSharp'] }
 
+nmap <silent> <Leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <Leader>j <Plug>(ale_next_wrap)
+
 nmap <silent> <buffer> gd <Plug>(omnisharp_go_to_definition)
 nmap <silent> <buffer> <Leader>f1 <Plug>(omnisharp_find_usages)
 nmap <silent> <buffer> <Leader>f2 <Plug>(omnisharp_find_implementations)
@@ -24,15 +27,15 @@ nmap <silent> <buffer> ]] <Plug>(omnisharp_navigate_down)
   " Find all code errors/warnings for the current solution and populate the quickfix window
 nmap <silent> <buffer> <Leader>qa <Plug>(omnisharp_global_code_check)
   " Contextual code actions (uses fzf, vim-clap, CtrlP or unite.vim selector when available)
-nmap <silent> <buffer> <Leader><space> <Plug>(omnisharp_code_actions)
-xmap <silent> <buffer> <Leader><space> <Plug>(omnisharp_code_actions)
+nmap <silent> <buffer> <c-space> <Plug>(omnisharp_code_actions)
+xmap <silent> <buffer> <c-space> <Plug>(omnisharp_code_actions)
   " Repeat the last code action performed (does not use a selector)
 nmap <silent> <buffer> <Leader>os. <Plug>(omnisharp_code_action_repeat)
 xmap <silent> <buffer> <Leader>os. <Plug>(omnisharp_code_action_repeat)
 
 nmap <silent> <buffer> <Leader>l <Plug>(omnisharp_code_format)
 
-nmap <silent> <buffer> <Leader><F6> <Plug>(omnisharp_rename)
+nmap <silent> <buffer> <F2> <Plug>(omnisharp_rename)
 
 nmap <silent> <buffer> <Leader>osre <Plug>(omnisharp_restart_server)
 nmap <silent> <buffer> <Leader>osst <Plug>(omnisharp_start_server)
