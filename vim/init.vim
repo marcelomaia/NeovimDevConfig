@@ -178,7 +178,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-emmet', 'coc-css', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', ]
+" you can add more intellisense to yml, just add coc-settings.json config from https://www.schemastore.org/api/json/catalog.json
+let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-emmet', 'coc-css', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', 'coc-yaml' ]
 
 " ============= Coc =================
 
@@ -218,8 +219,8 @@ let g:ctrlp_show_hidden = 1
 " Go to next git change
 nmap [g <Plug>(GitGutterPrevHunk)
 nmap ]g <Plug>(GitGutterNextHunk)
-nmap <Leader-g>g <Plug>(GitGutterPreviewHunk)
-nmap <Leader-g>u <Plug>(GitGutterUndoHunk)
+nmap <Leader>gg <Plug>(GitGutterPreviewHunk)
+nmap <Leader>gu <Plug>(GitGutterUndoHunk)
 let g:gitgutter_enabled=1
 let g:gitgutter_map_keys=0
 " ================GitGutter====================
@@ -266,6 +267,8 @@ noremap z8 :set foldlevel=7<CR>
 noremap z9 :set foldlevel=8<CR>
 
 noremap z0 :set foldlevel=99<CR>
+noremap [z zk
+noremap ]z zj
 " ================Folding====================
 
 " ================EditorConfig====================
