@@ -10,6 +10,13 @@
             "**/docker-compose.yaml",
             "**/docker-compose.*.yml",
             "**/docker-compose.*.yaml"
-        ]
-    }
+        ],
+        "https://json.schemastore.org/circleciconfig": [".circleci/config.yml"],
+        "https://json.schemastore.org/gitlab-ci": [".gitlab-ci.yml"],
+        "https://json.schemastore.org/travis": [".travis.yml"],
+        "https://json.schemastore.org/omnisharp": ["omnisharp.json"]
+    },
+    "suggest.numberSelect": true,
+    "diagnostic.virtualText": true,
+    "coc.preferences.colorSupport": true
 }

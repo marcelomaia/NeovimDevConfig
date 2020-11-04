@@ -41,9 +41,10 @@ Plugin 'scrooloose/nerdcommenter' " Comments
 Plugin 'sheerun/vim-polyglot' " Syntax highlight
 Plugin 'tpope/vim-fugitive' " NERDTree git
 Plugin 'yggdroot/indentline' " show a vertical line for indents
+Plugin 'tpope/vim-surround'
 
 " Web
-Plugin 'ap/vim-css-color' " hex colors
+"Plugin 'ap/vim-css-color' " hex colors
 Plugin 'prettier/vim-prettier'
 " Python
 " C#
@@ -65,6 +66,7 @@ let g:airline_theme='wombat'
 noremap q1 :q<CR>
 nnoremap w2 :w<CR>
 nnoremap wq1 :wq<CR>
+set termguicolors
 set splitright
 set confirm
 set number
@@ -146,12 +148,10 @@ map z/ <Plug>(incsearch-fuzzyspell-/)
 map z? <Plug>(incsearch-fuzzyspell-?)
 map zg/ <Plug>(incsearch-fuzzyspell-stay)
 " Spelling
-function SetLocalSpellLang() abort
-    setlocal spell spelllang=en_us
-    set complete+=kspell
-endfunction
-noremap <Leader>sp :.call SetLocalSpellLang()<CR>
-noremap <Leader>sp! :setlocal spell!<CR>
+noremap <Leader>se :setlocal spell spelllang=en_us<CR>
+noremap <Leader>sp :setlocal spell spelllang=pt_BR<CR>
+noremap <Leader>sc :set complete+=kspell<CR>
+noremap <Leader>s! :setlocal spell!<CR>
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 " Force hjkl
 "nnoremap <Left> :echoe "Use h"<CR>
@@ -169,6 +169,9 @@ nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 nmap <F2> <Plug>(coc-rename)
 nmap <silent> <c-space> :CocAction<CR>
+nmap <silent> <Leader>cp :call CocAction("pickColor")<CR>
+nmap <silent> <Leader>cp! :call CocAction("colorPresentation")<CR>
+autocmd CursorHold * silent call CocActionAsync('highlight')
 
 nmap <Leader>l <Plug>(coc-format)
 
@@ -179,7 +182,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " you can add more intellisense to yml, just add coc-settings.json config from https://www.schemastore.org/api/json/catalog.json
-let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-emmet', 'coc-css', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', 'coc-yaml' ]
+let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-emmet', 'coc-css', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', 'coc-yaml', 'coc-highlight']
 
 " ============= Coc =================
 
@@ -233,6 +236,7 @@ let g:gitgutter_map_keys=0
 " gl: diff from right
 " gh: diff from left
 " gd: open vertical split to solve merge conflicts
+" gd!: show diff from all files
 " gv: Show file history
 nmap <Leader>gs :G<CR>
 nmap <Leader>gc :Gco<CR>
@@ -241,6 +245,7 @@ nmap <Leader>gp :Gpush<CR>
 nmap <Leader>gl :diffget //3<CR>
 nmap <Leader>gh :diffget //2<CR>
 nmap <Leader>gd :Gvdiffsplit!<CR>
+nmap <Leader>gd! :G diff<CR>
 nmap <Leader>gv :GV!<CR>
 " ================Fugitive====================
 
