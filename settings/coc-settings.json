@@ -18,5 +18,6 @@
     },
     "suggest.numberSelect": true,
     "diagnostic.virtualText": true,
-    "coc.preferences.colorSupport": true
+    "coc.preferences.colorSupport": true,
+    "coc.preferences.enableMarkdown": false
 }

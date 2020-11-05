@@ -42,6 +42,7 @@ Plugin 'scrooloose/nerdcommenter' " Comments
 Plugin 'sheerun/vim-polyglot' " Syntax highlight
 Plugin 'tpope/vim-fugitive' " NERDTree git
 Plugin 'tpope/vim-surround' " rename tags and etc
+Plugin 'tpope/vim-rhubarb' " browse github
 Plugin 'yggdroot/indentline' " show a vertical line for indents
 
 " Web
@@ -166,6 +167,7 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 " ============= Coc =================
 " il will use in another moment -> autocmd User CocNvimInit echo "COC started..."
 inoremap <silent><expr> <tab> coc#refresh()
+vmap <Tab> <Plug>(coc-snippets-select)
 nmap <silent> [w <Plug>(coc-diagnostic-prev)
 nmap <silent> ]w <Plug>(coc-diagnostic-next)
 nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
@@ -251,6 +253,7 @@ nmap <Leader>gh :diffget //2<CR>
 nmap <Leader>gd :Gvdiffsplit!<CR>
 nmap <Leader>gd! :G diff<CR>
 nmap <Leader>gv :GV!<CR>
+nmap <Leader>gb :Gbrowse<CR>
 " ================Fugitive====================
 
 " ================Blamer====================
