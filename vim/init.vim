@@ -27,12 +27,13 @@ call vundle#begin()
 Plugin 'APZelos/blamer.nvim'  " like git lens from vscode
 Plugin 'Xuyuanp/nerdtree-git-plugin' " NERDTree git
 Plugin 'airblade/vim-gitgutter' " NERDTree git
-Plugin 'ctrlpvim/ctrlp.vim' " Search files
 Plugin 'editorconfig/editorconfig-vim' " keep coding style across IDES
 Plugin 'haya14busa/incsearch-fuzzy.vim'  " fuzzy search
 Plugin 'haya14busa/incsearch.vim' " for a better experience in searching
 Plugin 'honza/vim-snippets'   " snippets
 Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Markdown preview in browser
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " find files
+Plugin 'junegunn/fzf.vim' " find files
 Plugin 'junegunn/gv.vim' " Git history
 Plugin 'majutsushi/tagbar' " get an overview of current file structure
 Plugin 'neoclide/coc.nvim' " for code intellisense
@@ -40,11 +41,10 @@ Plugin 'preservim/nerdtree'
 Plugin 'scrooloose/nerdcommenter' " Comments
 Plugin 'sheerun/vim-polyglot' " Syntax highlight
 Plugin 'tpope/vim-fugitive' " NERDTree git
+Plugin 'tpope/vim-surround' " rename tags and etc
 Plugin 'yggdroot/indentline' " show a vertical line for indents
-Plugin 'tpope/vim-surround'
 
 " Web
-"Plugin 'ap/vim-css-color' " hex colors
 Plugin 'prettier/vim-prettier'
 " Python
 " C#
@@ -66,6 +66,8 @@ let g:airline_theme='wombat'
 noremap q1 :q<CR>
 nnoremap w2 :w<CR>
 nnoremap wq1 :wq<CR>
+nmap <c-p> :FZF<CR>
+nmap <c-p>p :Ag<CR>
 set termguicolors
 set splitright
 set confirm
@@ -96,6 +98,7 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 " enable relative numbers only in Normal mode, and absolute numbers only in Insert mode
 augroup toggle_relative_number
+autocmd FileType help wincmd L  " TODO: group autocmd cmds...opens help window vertically
 autocmd InsertEnter * :setlocal norelativenumber
 autocmd InsertLeave * :setlocal relativenumber
 " highlight trailing whitespace
@@ -161,6 +164,7 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 " ============= Preferences =================
 
 " ============= Coc =================
+" il will use in another moment -> autocmd User CocNvimInit echo "COC started..."
 inoremap <silent><expr> <tab> coc#refresh()
 nmap <silent> [w <Plug>(coc-diagnostic-prev)
 nmap <silent> ]w <Plug>(coc-diagnostic-next)
