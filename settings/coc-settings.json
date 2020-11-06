@@ -1,4 +1,5 @@
 {
+    "coc.preferences.extensionUpdateCheck": "weekly",
     "snippets.textmateSnippetsRoots": ["~/.config/nvim/vscode-snippets"],
     "codeLens.enable": true,
     "snippets.extends": { "vue": ["quasar"] },

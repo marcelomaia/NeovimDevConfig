@@ -47,6 +47,7 @@ Plugin 'yggdroot/indentline' " show a vertical line for indents
 
 " Web
 Plugin 'prettier/vim-prettier'
+Plugin 'mattn/emmet-vim' " html completion
 " Python
 " C#
 Plugin 'OmniSharp/omnisharp-vim'
@@ -61,6 +62,8 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 " ============= Preferences =================
+" https://vi.stackexchange.com/questions/24792/how-to-automatically-perform-a-command-after-yanking-text-vim-wayland-clipboard
+au TextYankPost * call system("xclip -selection clipboard", @") " after yank, save to clipboard
 let mapleader = "\\"
 colorscheme dracula
 let g:airline_theme='wombat'
