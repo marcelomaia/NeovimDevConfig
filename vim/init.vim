@@ -12,7 +12,7 @@ endif
 set runtimepath+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
 
-" let Vundle manage Vundle, required
+" Let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 if iCanHazVundle == 0
   echo 'Installing Bundles, please ignore key map error messages'
@@ -24,30 +24,30 @@ endif
 
 call vundle#begin()
 " For any situation
-Plugin 'APZelos/blamer.nvim'  " like git lens from vscode
-Plugin 'Xuyuanp/nerdtree-git-plugin' " NERDTree git
-Plugin 'airblade/vim-gitgutter' " NERDTree git
-Plugin 'editorconfig/editorconfig-vim' " keep coding style across IDES
-Plugin 'haya14busa/incsearch-fuzzy.vim'  " fuzzy search
-Plugin 'haya14busa/incsearch.vim' " for a better experience in searching
-Plugin 'honza/vim-snippets'   " snippets
+Plugin 'APZelos/blamer.nvim'                          " like git lens from vscode
+Plugin 'Xuyuanp/nerdtree-git-plugin'                  " NERDTree git
+Plugin 'airblade/vim-gitgutter'                       " NERDTree git
+Plugin 'editorconfig/editorconfig-vim'                " keep coding style across IDES
+Plugin 'godlygeek/tabular'                            " Align things in the same line. Visual : Tab /pattern
+Plugin 'haya14busa/incsearch-fuzzy.vim'               " Fuzzy search
+Plugin 'haya14busa/incsearch.vim'                     " For a better experience in searching
+Plugin 'honza/vim-snippets'                           " Snippets
 Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Markdown preview in browser
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " find files
-Plugin 'junegunn/fzf.vim' " find files
-Plugin 'junegunn/gv.vim' " Git history
-Plugin 'majutsushi/tagbar' " get an overview of current file structure
-Plugin 'neoclide/coc.nvim' " for code intellisense
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " Find files
+Plugin 'junegunn/fzf.vim'                             " Find files
+Plugin 'junegunn/gv.vim'                              " Git history
+Plugin 'majutsushi/tagbar'                            " Get an overview of current file structure
+Plugin 'neoclide/coc.nvim'                            " For code intellisense
 Plugin 'preservim/nerdtree'
-Plugin 'scrooloose/nerdcommenter' " Comments
-Plugin 'sheerun/vim-polyglot' " Syntax highlight
-Plugin 'tpope/vim-fugitive' " NERDTree git
-Plugin 'tpope/vim-surround' " rename tags and etc
-Plugin 'tpope/vim-rhubarb' " browse github
-Plugin 'yggdroot/indentline' " show a vertical line for indents
-
+Plugin 'scrooloose/nerdcommenter'                     " Comments
+Plugin 'sheerun/vim-polyglot'                         " Syntax highlight
+Plugin 'tpope/vim-fugitive'                           " NERDTree git
+Plugin 'tpope/vim-rhubarb'                            " Browse github
+Plugin 'tpope/vim-surround'                           " Rename tags and etc
+Plugin 'yggdroot/indentline'                          " Show a vertical line for indents
 " Web
 Plugin 'prettier/vim-prettier'
-Plugin 'mattn/emmet-vim' " html completion
+Plugin 'mattn/emmet-vim'                              " Html completion
 " Python
 " C#
 Plugin 'OmniSharp/omnisharp-vim'
@@ -63,7 +63,7 @@ Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 " ============= Preferences =================
 " https://vi.stackexchange.com/questions/24792/how-to-automatically-perform-a-command-after-yanking-text-vim-wayland-clipboard
-au TextYankPost * call system("xclip -selection clipboard", @") " after yank, save to clipboard
+au TextYankPost * call system("xclip -selection clipboard", @") " After yank, save to clipboard
 let mapleader = "\\"
 colorscheme dracula
 let g:airline_theme='wombat'
@@ -78,12 +78,12 @@ set confirm
 set number
 set wildmenu
 set title
-set ignorecase " case insensitive on search
+set ignorecase " Case insensitive on search
 set cursorline
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
+" Delays and poor user experience.
 set updatetime=300
-filetype plugin on " enables ftplugin
+filetype plugin on " Enables ftplugin
 
 " Indentation default
 set expandtab
@@ -100,16 +100,16 @@ augroup END
 " Move visual selection
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-" enable relative numbers only in Normal mode, and absolute numbers only in Insert mode
+" Enable relative numbers only in Normal mode, and absolute numbers only in Insert mode
 augroup toggle_relative_number
 autocmd FileType help wincmd L  " TODO: group autocmd cmds...opens help window vertically
 autocmd InsertEnter * :setlocal norelativenumber
 autocmd InsertLeave * :setlocal relativenumber
-" highlight trailing whitespace
+" Highlight trailing whitespace
 match ErrorMsg '\s\+$'
-" remove trailing whitespaces automatically
+" Remove trailing whitespaces automatically
 autocmd BufWritePre * :%s/\s\+$//e
-" tab navigation
+" Tab navigation
 " :tabedit file.txt
 noremap <Leader>1 1gt
 noremap <Leader>2 2gt
@@ -120,23 +120,23 @@ noremap <Leader>6 6gt
 noremap <Leader>7 7gt
 noremap <Leader>8 8gt
 noremap <Leader>9 9gt
-" vertical / horizontal resize
-noremap <Leader>> <c-w>10>  " vertical +
-noremap <Leader>< <c-w>10<  " vertical -
-noremap <Leader>+ <c-w>5+   " horizontal +
-noremap <Leader>- <c-w>5-   " horizontal -
+" Vertical / horizontal resize
+noremap <Leader>> <c-w>10>  " Vertical +
+noremap <Leader>< <c-w>10<  " Vertical -
+noremap <Leader>+ <c-w>5+   " Horizontal +
+noremap <Leader>- <c-w>5-   " Horizontal -
 noremap <Leader>= <c-w>=
-" navigation between vsplit and split
+" Navigation between vsplit and split
 map <C-H> :wincmd h<CR>
 map <C-J> :wincmd j<CR>
 map <C-K> :wincmd k<CR>
 map <C-L> :wincmd l<CR>
-" my keyboard is very small, so it makes sense
+" My keyboard is very small, so it makes sense
 map <C-Left> :wincmd h<CR>
 map <C-Down> :wincmd j<CR>
 map <C-Up> :wincmd k<CR>
 map <C-Right> :wincmd l<CR>
-" hlsearch
+" Hlsearch
 set hlsearch
 let g:incsearch#auto_nohlsearch = 1
 map n  <Plug>(incsearch-nohl-n)
@@ -168,7 +168,7 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 " ============= Preferences =================
 
 " ============= Coc =================
-" il will use in another moment -> autocmd User CocNvimInit echo "COC started..."
+" Il will use in another moment -> autocmd User CocNvimInit echo "COC started..."
 inoremap <silent><expr> <tab> coc#refresh()
 vmap <Tab> <Plug>(coc-snippets-select)
 nmap <silent> [w <Plug>(coc-diagnostic-prev)
@@ -190,7 +190,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
-" you can add more intellisense to yml, just add coc-settings.json config from https://www.schemastore.org/api/json/catalog.json
+" You can add more intellisense to yml, just add coc-settings.json config from https://www.schemastore.org/api/json/catalog.json
 let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-emmet', 'coc-css', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', 'coc-yaml', 'coc-highlight']
 
 " ============= Coc =================
@@ -267,8 +267,8 @@ let g:blamer_show_in_insert_modes = 0
 
 " ================Folding====================
 " Useful for hiding and showing methods or classes
-" try zo/zc to open/close fold
-" try zk/zj to go up/down in folds
+" Try zo/zc to open/close fold
+" Try zk/zj to go up/down in folds
 set foldmethod=indent
 set foldlevel=99
 noremap z1 :set foldlevel=0<CR>
@@ -297,4 +297,13 @@ autocmd VimEnter * nested :call tagbar#autoopen(1)
 
 " ================Markdown====================
 nmap <Leader>mp <Plug>MarkdownPreview
+let g:mkdp_auto_close = 0
 " ================Markdown====================
+
+" ================Gitlab browse====================
+" In your .bashrc or .zshrc add
+" export MY_GITLAB_DOMAIN=xpto.domain
+" export GITLAB_ACCESS_TOKEN=mytoken
+let g:fugitive_gitlab_domains = [$MY_GITLAB_DOMAIN]
+let g:gitlab_api_keys = {$MY_GITLAB_DOMAIN: $GITLAB_ACCESS_TOKEN}
+" ================Gitlab browse====================
