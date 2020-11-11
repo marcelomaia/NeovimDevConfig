@@ -46,7 +46,6 @@ Plugin 'tpope/vim-rhubarb'                            " Browse github
 Plugin 'tpope/vim-surround'                           " Rename tags and etc
 Plugin 'yggdroot/indentline'                          " Show a vertical line for indents
 " Web
-Plugin 'prettier/vim-prettier'
 Plugin 'mattn/emmet-vim'                              " Html completion
 " Python
 " C#
@@ -63,7 +62,7 @@ Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 " ============= Preferences =================
 " https://vi.stackexchange.com/questions/24792/how-to-automatically-perform-a-command-after-yanking-text-vim-wayland-clipboard
-au TextYankPost * call system("xclip -selection clipboard", @") " After yank, save to clipboard
+"au TextYankPost * call system("xclip -selection clipboard", @") " After yank, save to clipboard
 let mapleader = "\\"
 colorscheme dracula
 let g:airline_theme='wombat'
@@ -169,6 +168,9 @@ autocmd FileType gitcommit setlocal spell spelllang=en_us
 
 " ============= Coc =================
 " Il will use in another moment -> autocmd User CocNvimInit echo "COC started..."
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" convert a piece of code in snippet
+xmap <leader>x  <Plug>(coc-convert-snippet)
 inoremap <silent><expr> <tab> coc#refresh()
 vmap <Tab> <Plug>(coc-snippets-select)
 nmap <silent> [w <Plug>(coc-diagnostic-prev)
@@ -191,7 +193,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " You can add more intellisense to yml, just add coc-settings.json config from https://www.schemastore.org/api/json/catalog.json
-let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-emmet', 'coc-css', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', 'coc-yaml', 'coc-highlight']
+let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-prettier', 'coc-css', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', 'coc-yaml', 'coc-highlight']
 
 " ============= Coc =================
 
