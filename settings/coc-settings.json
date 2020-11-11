@@ -1,25 +1,32 @@
 {
-    "coc.preferences.extensionUpdateCheck": "weekly",
-      "coc.preferences.formatOnSaveFiletypes": ["css", "vue", "javascript", "scss", "json"],
-    "snippets.textmateSnippetsRoots": ["~/.config/nvim/vscode-snippets"],
-    "codeLens.enable": true,
-    "snippets.extends": { "vue": ["quasar"] },
-    "coc.preferences.rootPatterns": [".git", ".vim", ".projections.json"],
-    "diagnostic.format": "[%source]%code: %message [%severity]",
-    "yaml.schemas": {
-        "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": [
-            "**/docker-compose.yml",
-            "**/docker-compose.yaml",
-            "**/docker-compose.*.yml",
-            "**/docker-compose.*.yaml"
-        ],
-        "https://json.schemastore.org/circleciconfig": [".circleci/config.yml"],
-        "https://json.schemastore.org/gitlab-ci": [".gitlab-ci.yml"],
-        "https://json.schemastore.org/travis": [".travis.yml"],
-        "https://json.schemastore.org/omnisharp": ["omnisharp.json"]
-    },
-    "suggest.numberSelect": true,
-    "diagnostic.virtualText": true,
-    "coc.preferences.colorSupport": true,
-    "coc.preferences.enableMarkdown": false
+  "coc.preferences.extensionUpdateCheck": "weekly",
+  "coc.preferences.formatOnSaveFiletypes": [
+    "css",
+    "vue",
+    "javascript",
+    "scss",
+    "json"
+  ],
+  "snippets.textmateSnippetsRoots": ["~/.config/nvim/vscode-snippets"],
+  "codeLens.enable": true,
+  "snippets.extends": { "vue": ["quasar"] },
+  "coc.preferences.rootPatterns": [".git", ".vim", ".projections.json"],
+  "diagnostic.format": "[%source]%code: %message [%severity]",
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": [
+      "**/docker-compose.yml",
+      "**/docker-compose.yaml",
+      "**/docker-compose.*.yml",
+      "**/docker-compose.*.yaml"
+    ],
+    "https://json.schemastore.org/circleciconfig": [".circleci/config.yml"],
+    "https://json.schemastore.org/gitlab-ci": [".gitlab-ci.yml"],
+    "https://json.schemastore.org/travis": [".travis.yml"],
+    "https://json.schemastore.org/omnisharp": ["omnisharp.json"]
+  },
+  "suggest.numberSelect": true,
+  "diagnostic.virtualText": true,
+  "coc.preferences.colorSupport": true,
+  "markdownlint.onOpen": true,
+  "markdownlint.onSave": true
 }

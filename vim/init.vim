@@ -41,6 +41,7 @@ Plugin 'neoclide/coc.nvim'                            " For code intellisense
 Plugin 'preservim/nerdtree'
 Plugin 'scrooloose/nerdcommenter'                     " Comments
 Plugin 'sheerun/vim-polyglot'                         " Syntax highlight
+Plugin 'shumphrey/fugitive-gitlab.vim'                " Browse gitlab
 Plugin 'tpope/vim-fugitive'                           " NERDTree git
 Plugin 'tpope/vim-rhubarb'                            " Browse github
 Plugin 'tpope/vim-surround'                           " Rename tags and etc
@@ -200,7 +201,7 @@ let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-pyt
 " ================NERDTree====================
 let NERDTreeShowHidden=1
 nmap <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__', 'CodeAnalysis', 'out']
+let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__', 'CodeAnalysis', 'out', 'node_modules']
 " ================NERDTree====================
 
 " ================ALE-Linting====================
