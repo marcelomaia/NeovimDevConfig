@@ -45,6 +45,7 @@ Plugin 'shumphrey/fugitive-gitlab.vim'                " Browse gitlab
 Plugin 'tpope/vim-fugitive'                           " NERDTree git
 Plugin 'tpope/vim-rhubarb'                            " Browse github
 Plugin 'tpope/vim-surround'                           " Rename tags and etc
+Plugin 'lukelbd/vim-toggle'                           " yes<->no, on<->off, etc.
 Plugin 'yggdroot/indentline'                          " Show a vertical line for indents
 " Web
 Plugin 'mattn/emmet-vim'                              " Html completion
@@ -89,7 +90,7 @@ filetype plugin on " Enables ftplugin
 set expandtab
 set shiftwidth=4
 set softtabstop=4
-map <Leader>l gg=G<C-o><C-o>
+nnoremap <Leader>l gg=G<C-o><C-o>
 augroup PrettierFormat
     autocmd FileType javascript nnoremap <Leader>l :Prettier<CR>
     autocmd FileType json nnoremap <Leader>l :Prettier<CR>
@@ -194,7 +195,22 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " You can add more intellisense to yml, just add coc-settings.json config from https://www.schemastore.org/api/json/catalog.json
-let g:coc_global_extensions=[ 'coc-snippets', 'coc-vimlsp', 'coc-json', 'coc-python', 'coc-prettier', 'coc-css', 'coc-docker' , 'coc-pairs', 'coc-vetur' , 'coc-markdownlint' , 'coc-eslint', 'coc-yaml', 'coc-highlight']
+let g:coc_global_extensions=[
+            \'coc-css',
+            \'coc-docker' ,
+            \'coc-eslint',
+            \'coc-highlight',
+            \'coc-json',
+            \'coc-markdownlint' ,
+            \'coc-pairs',
+            \'coc-prettier',
+            \'coc-python',
+            \'coc-snippets',
+            \'coc-sql',
+            \'coc-vetur' ,
+            \'coc-vimlsp',
+            \'coc-yaml',
+            \]
 
 " ============= Coc =================
 
@@ -310,3 +326,7 @@ let g:mkdp_auto_close = 0
 let g:fugitive_gitlab_domains = [$MY_GITLAB_DOMAIN]
 let g:gitlab_api_keys = {$MY_GITLAB_DOMAIN: $GITLAB_ACCESS_TOKEN}
 " ================Gitlab browse====================
+
+nnoremap <Leader>~ :Toggle<CR>
+let g:toggle_words_on = ['true', 'on', 'yes', 'define', 'in', 'up', 'left', 'north', 'east', 'and']
+let g:toggle_words_off = ['false', 'off', 'no', 'undef', 'out', 'down', 'right', 'south', 'west', 'or']
