@@ -64,7 +64,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 " ============= Preferences =================
-" https://vi.stackexchange.com/questions/24792/how-to-automatically-perform-a-command-after-yanking-text-vim-wayland-clipboard
 "au TextYankPost * call system("xclip -selection clipboard", @") " After yank, save to clipboard
 let mapleader = "\\"
 colorscheme dracula
@@ -73,7 +72,7 @@ noremap q1 :q<CR>
 nnoremap w2 :w<CR>
 nnoremap wq1 :wq<CR>
 nmap <c-p> :FZF<CR>
-nmap <c-p>p :Ag<CR>
+nmap <c-p>a :Ag<CR>
 set termguicolors
 set splitright
 set confirm
@@ -83,8 +82,8 @@ set inccommand=nosplit " On substitution shows whats is happening
 set title
 set ignorecase         " Case insensitive on search
 set cursorline
-set updatetime=300 " Having longer updatetime leads to noticeable delays and poor user experience.
-filetype plugin on " Enables ftplugin
+set updatetime=300     " Having longer updatetime leads to noticeable delays and poor user experience.
+filetype plugin on     " Enables ftplugin
 
 " Indentation default
 set expandtab
@@ -257,6 +256,18 @@ let g:gitgutter_map_keys=0
 " ================GitGutter====================
 
 " ================Fugitive====================
+function RevertFile()
+    if confirm('Revert uncommited file to original?', "&Yes\n&No", 1)==1
+        :G checkout %
+    endif
+endfunction
+
+function RevertAllFiles()
+   if confirm('Revert all uncommited files?', "&Yes\n&No", 1)==1
+       :G reset --hard HEAD
+   endif
+endfunction
+
 " gs  git status 's' to stage, 'u' to unstage
 " gc git commit (type 'commit' and a template message will be provided)
 " gca git commit --amend
@@ -266,6 +277,8 @@ let g:gitgutter_map_keys=0
 " gd: open vertical split to solve merge conflicts
 " gd!: show diff from all files
 " gv: Show file history
+" gr: Reset an uncommited single file
+" gr! Reset all uncommited files
 nmap <Leader>gs :G<CR>
 nmap <Leader>gc :Gco<CR>
 nmap <Leader>gca :Gco --amend<CR>
@@ -276,6 +289,8 @@ nmap <Leader>gd :Gvdiffsplit!<CR>
 nmap <Leader>gd! :G diff<CR>
 nmap <Leader>gv :GV!<CR>
 nmap <Leader>gb :Gbrowse<CR>
+nmap <Leader>gr :call RevertFile()<CR>
+nmap <Leader>gr! :call RevertAllFiles()<CR>
 " ================Fugitive====================
 
 " ================Blamer====================
