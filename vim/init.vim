@@ -47,6 +47,7 @@ Plugin 'tpope/vim-rhubarb'                            " Browse github
 Plugin 'tpope/vim-surround'                           " Rename tags and etc
 Plugin 'lukelbd/vim-toggle'                           " yes<->no, on<->off, etc.
 Plugin 'yggdroot/indentline'                          " Show a vertical line for indents
+Plugin 'machakann/vim-highlightedyank'                " Show highlight on recently yanked text
 " Web
 Plugin 'mattn/emmet-vim'                              " Html completion
 " Python
@@ -78,12 +79,11 @@ set splitright
 set confirm
 set number
 set wildmenu
+set inccommand=nosplit " On substitution shows whats is happening
 set title
-set ignorecase " Case insensitive on search
+set ignorecase         " Case insensitive on search
 set cursorline
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" Delays and poor user experience.
-set updatetime=300
+set updatetime=300 " Having longer updatetime leads to noticeable delays and poor user experience.
 filetype plugin on " Enables ftplugin
 
 " Indentation default
@@ -310,7 +310,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " ================EditorConfig====================
 
 " ================Tagbar====================
-nnoremap <silent> <Leader>t :TagbarToggle<CR>
+nnoremap <silent> <Leader>tt :TagbarToggle<CR>
 autocmd VimEnter * nested :call tagbar#autoopen(1)
 " ================Tagbar====================
 
@@ -327,6 +327,31 @@ let g:fugitive_gitlab_domains = [$MY_GITLAB_DOMAIN]
 let g:gitlab_api_keys = {$MY_GITLAB_DOMAIN: $GITLAB_ACCESS_TOKEN}
 " ================Gitlab browse====================
 
+" ================Toggle string values====================
 nnoremap <Leader>~ :Toggle<CR>
 let g:toggle_words_on = ['true', 'on', 'yes', 'define', 'in', 'up', 'left', 'north', 'east', 'and']
 let g:toggle_words_off = ['false', 'off', 'no', 'undef', 'out', 'down', 'right', 'south', 'west', 'or']
+" ================Toggle string values====================
+
+" ================Tabularize====================
+" Useful for tables in markdown and Cucumber
+" https://gist.github.com/tpope/287147
+" http://vimcasts.org/episodes/aligning-text-with-tabular-vim/
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
+
+nmap <Leader>t= :Tabularize /=<CR>
+vmap <Leader>t= :Tabularize /=<CR>
+nmap <Leader>t\| :Tabularize /\|<CR>
+vmap <Leader>t\| :Tabularize /\|<CR>
+" ================Tabularize====================
