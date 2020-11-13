@@ -48,6 +48,8 @@ Plugin 'tpope/vim-surround'                           " Rename tags and etc
 Plugin 'lukelbd/vim-toggle'                           " yes<->no, on<->off, etc.
 Plugin 'yggdroot/indentline'                          " Show a vertical line for indents
 Plugin 'machakann/vim-highlightedyank'                " Show highlight on recently yanked text
+Plugin 'tommcdo/vim-exchange'                         " cx{motion} + . change words position
+Plugin 'gyim/vim-boxdraw'                             " ASCII diagrams on visual block mode. Maybe create a symbolic link ln -s /usr/bin/python3.8 /usr/bin/python
 " Web
 Plugin 'mattn/emmet-vim'                              " Html completion
 " Python
@@ -64,7 +66,6 @@ Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 call vundle#end()
 " ============= Preferences =================
-"au TextYankPost * call system("xclip -selection clipboard", @") " After yank, save to clipboard
 let mapleader = "\\"
 colorscheme dracula
 let g:airline_theme='wombat'
@@ -79,12 +80,14 @@ set confirm
 set number
 set wildmenu
 set inccommand=nosplit " On substitution shows whats is happening
-set title
+set title              " Set title based on current file
 set ignorecase         " Case insensitive on search
 set cursorline
 set updatetime=300     " Having longer updatetime leads to noticeable delays and poor user experience.
 filetype plugin on     " Enables ftplugin
-
+" system clipboard
+vmap <leader>y "+y
+nmap <leader>y "+y
 " Indentation default
 set expandtab
 set shiftwidth=4
@@ -155,10 +158,10 @@ map z/ <Plug>(incsearch-fuzzyspell-/)
 map z? <Plug>(incsearch-fuzzyspell-?)
 map zg/ <Plug>(incsearch-fuzzyspell-stay)
 " Spelling
-noremap <Leader>se :setlocal spell spelllang=en_us<CR>
-noremap <Leader>sp :setlocal spell spelllang=pt_BR<CR>
-noremap <Leader>sc :set complete+=kspell<CR>
-noremap <Leader>s! :setlocal spell!<CR>
+noremap <Leader>se :setlocal spell! spelllang=en_us<CR>
+noremap <Leader>sp :setlocal spell! spelllang=pt_BR<CR>
+set complete+=kspell<CR>
+noremap <Leader>s! :set spell!<CR>
 autocmd FileType gitcommit setlocal spell spelllang=en_us
 " Force hjkl
 "nnoremap <Left> :echoe "Use h"<CR>
@@ -369,4 +372,6 @@ nmap <Leader>t= :Tabularize /=<CR>
 vmap <Leader>t= :Tabularize /=<CR>
 nmap <Leader>t\| :Tabularize /\|<CR>
 vmap <Leader>t\| :Tabularize /\|<CR>
+nmap <Leader>t" :Tabularize /"<CR>
+vmap <Leader>t" :Tabularize /"<CR>
 " ================Tabularize====================
