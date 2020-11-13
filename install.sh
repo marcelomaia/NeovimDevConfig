@@ -22,4 +22,9 @@ cp ./settings/coc-settings.json ~/.config/nvim/coc-settings.json
 
 echo "Copying Omnisharp settings..."
 cp ./settings/omnisharp.json ~/.omnisharp
-# TODO: ask if is desired to change caps for esc
+
+echo "Copying fancy fonts"
+if [ -d "~/.config/nvim/figlet/fonts" ]; then
+    mkdir -p ~/.config/nvim/figlet/fonts
+    git clone https://github.com/xero/figlet-fonts ~/.config/nvim/figlet/fonts
+fi

@@ -47,6 +47,7 @@ Plugin 'tpope/vim-rhubarb'                            " Browse github
 Plugin 'tpope/vim-surround'                           " Rename tags and etc
 Plugin 'lukelbd/vim-toggle'                           " yes<->no, on<->off, etc.
 Plugin 'yggdroot/indentline'                          " Show a vertical line for indents
+Plugin 'fadein/vim-FIGlet'                            " ASCII text art
 Plugin 'machakann/vim-highlightedyank'                " Show highlight on recently yanked text
 Plugin 'tommcdo/vim-exchange'                         " cx{motion} + . change words position
 Plugin 'gyim/vim-boxdraw'                             " ASCII diagrams on visual block mode. Maybe create a symbolic link ln -s /usr/bin/python3.8 /usr/bin/python
@@ -375,3 +376,7 @@ vmap <Leader>t\| :Tabularize /\|<CR>
 nmap <Leader>t" :Tabularize /"<CR>
 vmap <Leader>t" :Tabularize /"<CR>
 " ================Tabularize====================
+
+" ================Figlet====================
+let g:figletFontDir = '~/.config/nvim/figlet/fonts'
+" ================Figlet====================
