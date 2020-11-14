@@ -1,5 +1,5 @@
 scriptencoding utf-8
-let b:indentLine_enabled=0
+let g:indentLine_enabled=0
 set conceallevel=0
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0

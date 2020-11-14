@@ -2,14 +2,14 @@
 
 ```
 
-                                 )         )          (       *
-                               ( /(      ( /(          )\ )  (  `
-                               )\()) (   )\()) (   (  (()/(  )\))(
-                              ((_)\  )\ ((_)\  )\  )\  /(_))((_)()\
-                               _((_)((_)  ((_)((_)((_)(_))  (_()((_)
-                              | \| || __|/ _ \\ \ / / |_ _| |  \/  |
-                              | .` || _|| (_) |\ V /   | |  | |\/| |
-                              |_|\_||___|\___/  \_/   |___| |_|  |_|
+     )         )          (       *
+   ( /(      ( /(          )\ )  (  `
+   )\()) (   )\()) (   (  (()/(  )\))(
+  ((_)\  )\ ((_)\  )\  )\  /(_))((_)()\
+   _((_)((_)  ((_)((_)((_)(_))  (_()((_)
+  | \| || __|/ _ \\ \ / / |_ _| |  \/  |
+  | .` || _|| (_) |\ V /   | |  | |\/| |
+  |_|\_||___|\___/  \_/   |___| |_|  |_|
 
 
 ```
@@ -20,64 +20,45 @@
 - Q: It's better than a paid IDE?
 - A: Sure bro!
 
-## Leader key: '\\'
-
-## Plugins
-
-- For any situation:
-  - APZelos/blamer.nvim
-  - Xuyuanp/nerdtree-git-plugin
-  - airblade/vim-gitgutter
-  - ctrlpvim/ctrlp.vim
-  - editorconfig/editorconfig-vim
-  - haya14busa/incsearch.vim
-  - honza/vim-snippets
-  - iamcco/markdown-preview.nvim
-  - junegunn/gv.vim
-  - majutsushi/tagbar
-  - neoclide/coc.nvim
-  - preservim/nerdtree
-  - scrooloose/nerdcommenter
-  - sheerun/vim-polyglot
-  - tpope/vim-fugitive
-  - yggdroot/indentline
-    - coc-docker
-    - coc-esli
-    - coc-json
-    - coc-markdownlint
-    - coc-omnisharp
-    - coc-pairs
-    - coc-python
-    - coc-snippets
-    - coc-vetur
-    - coc-vimlsp
-- For linting
-  - dense-analysis/ale
-- For web development
-  - ap/vim-css-color
-  - eattn/emmet-vim
-  - prettier/vim-prettier
-- Themes
-  - dracula/vim
-  - ryanoasis/vim-devicons
-  - vim-airline/vim-airline
-  - vim-airline/vim-airline-themes
-
-## Requirements
+## Dependencies
 
 ### Mandatory
 
 - NeoVIM
 - Nodejs >= 12. Please prefer [NVM](https://github.com/nvm-sh/nvm)
+- Python >2.7   Please prefer 3.5+
 
 ### Optional
 
 - [Jedi](https://github.com/davidhalter/jedi)
 - [Virtualenv](https://github.com/pypa/virtualenv)
 - [Ctags](http://ctags.sourceforge.net/)
-- Figlet
+- [Figlet](http://www.figlet.org/)
+  -- On windows try: ``npm install -g figlet-cli``
+
+## Leader key: '\\'
 
 ## Features
+
+- Fuzzy find files: \<Control-p>
+- Find by text content (Must have Ag command)
+- Show who made last modification like Gitlens from vscode
+- Align text using a token as a reference
+- Markdown preview
+- Snippets for many languages
+- Tagbar: view your variables and classes on the right side \<Control-tt>
+- Comments
+- Git integration for commits, conflicts, diffs, etc.
+- ASCII art and ASCII diagrams
+- Toggle words to it opposite: on<->off, true<->false, etc
+- Intuitive navigation using [ and ]
+- Intellisense for python, js, c#, vuejs, vimfiles, json, css, html, Dockerfile, yaml, sql,
+- Spelling check
+- Refactoring
+- Renaming
+- Smart suggestions
+
+## Shortcuts
 
 ### Useful shortcuts
 
@@ -85,22 +66,6 @@
 - \<Control-p\>     - quickly find file
 - \<Leader\>l          - code indenting
 - K/J         - move a code block up/down
-
-### For all languages
-
-- Nice lint integration (vimfiles, json, vue, js, python, c#, markdown)
-- Snippets for many languages
-
-### For Python
-
-- TODO: auto suggest imports
-- Intellisense from coc-python
-  - refactoring
-  - extract variable
-  - sort imports
-- Django objects.filter has auto complete!
-
-## Shortcuts
 
 ### Git
 
@@ -138,3 +103,4 @@ Assuming that your code is well indented, you can quickly hide and show methods/
 - z1 - set foldlevel = 0
 - z2 - set foldlevel = 1
 - zn - set foldlevel = n-1
+

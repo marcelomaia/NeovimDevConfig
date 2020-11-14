@@ -48,7 +48,9 @@ Plugin 'neoclide/coc.nvim'                            " For code intellisense
 Plugin 'preservim/nerdtree'
 Plugin 'scrooloose/nerdcommenter'                     " Comments
 Plugin 'sheerun/vim-polyglot'                         " Syntax highlight
-Plugin 'shumphrey/fugitive-gitlab.vim'                " Browse gitlab
+if !isWindows
+    Plugin 'shumphrey/fugitive-gitlab.vim'            " Browse gitlab
+endif
 Plugin 'tpope/vim-fugitive'                           " NERDTree git
 Plugin 'tpope/vim-rhubarb'                            " Browse github
 Plugin 'tpope/vim-surround'                           " Rename tags and etc
