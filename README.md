@@ -75,6 +75,7 @@
 - [Jedi](https://github.com/davidhalter/jedi)
 - [Virtualenv](https://github.com/pypa/virtualenv)
 - [Ctags](http://ctags.sourceforge.net/)
+- Figlet
 
 ## Features
 

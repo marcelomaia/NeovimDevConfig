@@ -1,25 +1,32 @@
 " START - Setting up Vundle - the vim plugin bundler
 " https://github.com/VundleVim/Vundle.vim/issues/769
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
-if !filereadable(vundle_readme)
-  echo 'Installing Vundle..'
-  echo ''
-  silent !mkdir -p ~/.vim/bundle
-  silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-  let iCanHazVundle=0
-endif
-set runtimepath+=~/.vim/bundle/Vundle.vim/
-call vundle#rc()
+if has('win32')
+    let isWindows = 1
+    set runtimepath+=$USERPROFILE\.vim\bundle\Vundle.vim
+else
+  let isWindows = 0
+  let iCanHazVundle=1
+  let vundle_readme=expand('~/.vim/bundle/Vundle.vim/README.md')
+  if !filereadable(vundle_readme)
+    echo 'Installing Vundle..'
+    echo ''
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    let iCanHazVundle=0
+  endif
+  set runtimepath+=~/.vim/bundle/Vundle.vim/
+  call vundle#rc()
 
-" Let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-if iCanHazVundle == 0
-  echo 'Installing Bundles, please ignore key map error messages'
-  echo ''
-  :source $MYVIMRC
-  :PluginInstall
+  " Let Vundle manage Vundle, required
+  Plugin 'VundleVim/Vundle.vim'
+  if iCanHazVundle == 0
+    echo 'Installing Bundles, please ignore key map error messages'
+    echo ''
+    :source $MYVIMRC
+    :PluginInstall
+  endif
 endif
+
 " END - Setting up Vundle - the vim plugin bundler
 
 call vundle#begin()
@@ -378,5 +385,9 @@ vmap <Leader>t" :Tabularize /"<CR>
 " ================Tabularize====================
 
 " ================Figlet====================
-let g:figletFontDir = '~/.config/nvim/figlet/fonts'
+if isWindows
+    let g:figletFontDir = $LOCALAPPDATA . "/nvim/figlet/fonts"
+else
+    let g:figletFontDir = '~/.config/nvim/figlet/fonts'
+endif
 " ================Figlet====================
