@@ -1,5 +1,16 @@
 {
   "coc.preferences.extensionUpdateCheck": "weekly",
+  "vetur.trace.server": "verbose",
+  "vetur.completion.autoImport": true,
+  "vetur.completion.scaffoldSnippetSources": {
+    "workspace": "💼",
+    "user": "🗒️",
+    "vetur": "✌"
+  },
+  "vetur.validation.style": true,
+  "vetur.format.defaultFormatter.scss": "prettier",
+  "vetur.format.enable": true,
+  "vetur.format.defaultFormatter.html": "prettier",
   "coc.preferences.formatOnSaveFiletypes": [
     "css",
     "vue",

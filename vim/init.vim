@@ -43,6 +43,7 @@ Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Mar
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " Find files
 Plugin 'junegunn/fzf.vim'                             " Find files
 Plugin 'junegunn/gv.vim'                              " Git history
+Plugin 'sotte/presenting.vim'                         " Added presentation slides in CLI :
 Plugin 'majutsushi/tagbar'                            " Get an overview of current file structure
 Plugin 'neoclide/coc.nvim'                            " For code intellisense
 Plugin 'preservim/nerdtree'
@@ -78,7 +79,7 @@ call vundle#end()
 " ============= Preferences =================
 let mapleader = "\\"
 colorscheme dracula
-let g:airline_theme='wombat'
+"let g:airline_theme='wombat'
 noremap q1 :q<CR>
 nnoremap w2 :w<CR>
 nnoremap wq1 :wq<CR>
@@ -230,7 +231,7 @@ let g:coc_global_extensions=[
 " ================NERDTree====================
 let NERDTreeShowHidden=1
 nmap <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__', 'CodeAnalysis', 'out', 'node_modules']
+let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '^__pycache__$', '^CodeAnalysis$', '^out$', '^node_modules$']
 " ================NERDTree====================
 
 " ================ALE-Linting====================
