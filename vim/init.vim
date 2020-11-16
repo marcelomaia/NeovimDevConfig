@@ -231,6 +231,19 @@ let g:coc_global_extensions=[
 let NERDTreeShowHidden=1
 nmap <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__', 'CodeAnalysis', 'out', 'node_modules']
+
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+            \ 'Modified'  :'m',
+            \ 'Staged'    :'s',
+            \ 'Untracked' :'u',
+            \ 'Renamed'   :'r',
+            \ 'Unmerged'  :'═',
+            \ 'Deleted'   :'x',
+            \ 'Dirty'     :'>',
+            \ 'Ignored'   :'i',
+            \ 'Clean'     :'c',
+            \ 'Unknown'   :'?',
+            \ }
 " ================NERDTree====================
 
 " ================ALE-Linting====================
