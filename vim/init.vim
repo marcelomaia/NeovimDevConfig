@@ -194,6 +194,7 @@ nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 nmap <F2> <Plug>(coc-rename)
 nmap <silent> <c-space> :CocAction<CR>
+vmap <silent> <c-space> :CocAction<CR>
 nmap <silent> <Leader>cp :call CocAction("pickColor")<CR>
 nmap <silent> <Leader>cp! :call CocAction("colorPresentation")<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -230,6 +231,19 @@ let g:coc_global_extensions=[
 let NERDTreeShowHidden=1
 nmap <C-n> :NERDTreeToggle<CR>
 let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__', 'CodeAnalysis', 'out', 'node_modules']
+
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+            \ 'Modified'  :'m',
+            \ 'Staged'    :'s',
+            \ 'Untracked' :'u',
+            \ 'Renamed'   :'r',
+            \ 'Unmerged'  :'═',
+            \ 'Deleted'   :'x',
+            \ 'Dirty'     :'>',
+            \ 'Ignored'   :'i',
+            \ 'Clean'     :'c',
+            \ 'Unknown'   :'?',
+            \ }
 " ================NERDTree====================
 
 " ================ALE-Linting====================
@@ -388,7 +402,7 @@ vmap <Leader>t" :Tabularize /"<CR>
 
 " ================Figlet====================
 if isWindows
-    let g:figletFontDir = $LOCALAPPDATA . "/nvim/figlet/fonts"
+    let g:figletFontDir = $LOCALAPPDATA . '/nvim/figlet/fonts'
 else
     let g:figletFontDir = '~/.config/nvim/figlet/fonts'
 endif
