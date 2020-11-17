@@ -207,6 +207,10 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
+" Jump between snippets points
+let g:coc_snippet_next = "<c-s-j>"
+let g:coc_snippet_prev = "<c-s-k>"
+
 " You can add more intellisense to yml, just add coc-settings.json config from https://www.schemastore.org/api/json/catalog.json
 let g:coc_global_extensions=[
             \'coc-css',
