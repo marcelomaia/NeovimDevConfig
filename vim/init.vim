@@ -50,9 +50,7 @@ Plugin 'neoclide/coc.nvim'                            " For code intellisense
 Plugin 'preservim/nerdtree'
 Plugin 'scrooloose/nerdcommenter'                     " Comments
 Plugin 'sheerun/vim-polyglot'                         " Syntax highlight
-if !isWindows
-    Plugin 'shumphrey/fugitive-gitlab.vim'            " Browse gitlab
-endif
+Plugin 'shumphrey/fugitive-gitlab.vim'            " Browse gitlab
 Plugin 'tpope/vim-fugitive'                           " NERDTree git
 Plugin 'tpope/vim-rhubarb'                            " Browse github
 Plugin 'tpope/vim-surround'                           " Rename tags and etc
@@ -371,8 +369,10 @@ let g:mkdp_auto_close = 0
 " In your .bashrc or .zshrc add
 " export MY_GITLAB_DOMAIN=xpto.domain
 " export GITLAB_ACCESS_TOKEN=mytoken
-let g:fugitive_gitlab_domains = [$MY_GITLAB_DOMAIN]
-let g:gitlab_api_keys = {$MY_GITLAB_DOMAIN: $GITLAB_ACCESS_TOKEN}
+if $MY_GITLAB_DOMAIN !=# ''
+    let g:fugitive_gitlab_domains = [$MY_GITLAB_DOMAIN]
+    let g:gitlab_api_keys = {$MY_GITLAB_DOMAIN: $GITLAB_ACCESS_TOKEN}
+endif
 " ================Gitlab browse====================
 
 " ================Toggle string values====================
