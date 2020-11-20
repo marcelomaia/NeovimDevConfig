@@ -1,10 +1,6 @@
 #!/usr/bin/env bash
 
-RED='\033[0;31m'
-GREEN='\033[0;32m'
-NC='\033[0m' # No Color
-
-echo -e "${RED}
+echo -e "$C_RED
  ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓
  ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒
 ▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░
@@ -14,33 +10,33 @@ echo -e "${RED}
 ░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░
    ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░
          ░    ░  ░    ░ ░        ░   ░         ░
-${NC}"
+$C_OFF"
 
 mkdir -p ~/.config/nvim/after
 mkdir -p ~/.config/nvim/vscode-snippets
 mkdir -p ~/.config/coc/ultisnips/
 mkdir -p ~/.omnisharp
 
-echo -e "${GREEN} Copying init.vim...${NC}"
+echo -e "$C_GREEN Copying init.vim...$C_OFF"
 cp ./vim/init.vim ~/.config/nvim/init.vim
 
-echo -e "${GREEN} Copying language specific files...${NC}"
+echo -e "$C_GREEN Copying language specific files...$C_OFF"
 cp -r ./ftplugin ~/.config/nvim/after/
 
-echo -e "${GREEN} Copying Utilsnips snippets...${NC}"
+echo -e "$C_GREEN Copying Utilsnips snippets...$C_OFF"
 cp -r ./snippets/*.snippets ~/.config/coc/ultisnips/
 
-echo -e "${GREEN} Copying Vscode snippets...${NC}"
+echo -e "$C_GREEN Copying Vscode snippets...$C_OFF"
 cp -r ./snippets/*.json ~/.config/nvim/vscode-snippets
 
-echo -e "${GREEN} Copying Coc settings...${NC}"
+echo -e "$C_GREEN Copying Coc settings...$C_OFF"
 cp ./settings/coc-settings.json ~/.config/nvim/coc-settings.json
 
-echo -e "${GREEN} Copying Omnisharp settings...${NC}"
+echo -e "$C_GREEN Copying Omnisharp settings...$C_OFF"
 cp ./settings/omnisharp.json ~/.omnisharp
 
 
-echo -e "${GREEN} Copying fancy fonts${NC}"
+echo -e "$C_GREEN Copying fancy fonts$C_OFF"
 [[ ! -d "$HOME/.config/nvim/figlet/fonts" ]] && mkdir -p ~/.config/nvim/figlet/fonts && git clone https://github.com/xero/figlet-fonts ~/.config/nvim/figlet/fonts
 
 [[ ! -d "$HOME/.vim/bundle/markdown-preview.nvim/node_modules" ]] && cd ~/.vim/bundle/markdown-preview.nvim && yarn install && cd -
