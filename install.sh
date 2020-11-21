@@ -39,4 +39,5 @@ cp ./settings/omnisharp.json ~/.omnisharp
 echo -e "$C_GREEN Copying fancy fonts$C_OFF"
 [[ ! -d "$HOME/.config/nvim/figlet/fonts" ]] && mkdir -p ~/.config/nvim/figlet/fonts && git clone https://github.com/xero/figlet-fonts ~/.config/nvim/figlet/fonts
 
-[[ ! -d "$HOME/.vim/bundle/markdown-preview.nvim/node_modules" ]] && cd ~/.vim/bundle/markdown-preview.nvim && yarn install && cd -
+# uncomment this line if markdown does not work
+#[[ ! -d "$HOME/.vim/bundle/markdown-preview.nvim/node_modules" ]] && cd ~/.vim/bundle/markdown-preview.nvim && yarn install && cd -

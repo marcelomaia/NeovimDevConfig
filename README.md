@@ -1,17 +1,16 @@
 # Neovim Developer Configuration
 
 ```
-
-     )         )          (       *
-   ( /(      ( /(          )\ )  (  `
-   )\()) (   )\()) (   (  (()/(  )\))(
-  ((_)\  )\ ((_)\  )\  )\  /(_))((_)()\
-   _((_)((_)  ((_)((_)((_)(_))  (_()((_)
-  | \| || __|/ _ \\ \ / / |_ _| |  \/  |
-  | .` || _|| (_) |\ V /   | |  | |\/| |
-  |_|\_||___|\___/  \_/   |___| |_|  |_|
-
-
+ ███▄    █ ▓█████  ▒█████   ██▒   █▓ ██▓ ███▄ ▄███▓
+ ██ ▀█   █ ▓█   ▀ ▒██▒  ██▒▓██░   █▒▓██▒▓██▒▀█▀ ██▒
+▓██  ▀█ ██▒▒███   ▒██░  ██▒ ▓██  █▒░▒██▒▓██    ▓██░
+▓██▒  ▐▌██▒▒▓█  ▄ ▒██   ██░  ▒██ █░░░██░▒██    ▒██
+▒██░   ▓██░░▒████▒░ ████▓▒░   ▒▀█░  ░██░▒██▒   ░██▒
+░ ▒░   ▒ ▒ ░░ ▒░ ░░ ▒░▒░▒░    ░ ▐░  ░▓  ░ ▒░   ░  ░
+░ ░░   ░ ▒░ ░ ░  ░  ░ ▒ ▒░    ░ ░░   ▒ ░░  ░      ░
+   ░   ░ ░    ░   ░ ░ ░ ▒       ░░   ▒ ░░      ░
+         ░    ░  ░    ░ ░        ░   ░         ░
+                                ░
 ```
 
 - Q: What is it?
@@ -71,8 +70,9 @@
 - **\<Leader\>~**  - swap a word to it opposite
 - **[g and ]g** - go to prev/next git modification
 
-![Code action](./images/code_action.png)
-*Control + space calls code action!*
+| ![Code action](./images/code_action.png) |
+| :--:                                     |
+| *Control + space calls code action!*     |
 
 ### Git
 
@@ -91,8 +91,9 @@
 - **]g**  - go to next modification in your source code
 - **[g**  - go to previous modification in your source code
 
-![Git conflict solver](./images/git_conflict.png)
-*Solving merge conflicts*
+| ![Git conflict solver](./images/git_conflict.png) |
+| :--:                                              |
+| *Solving merge conflicts*                         |
 
 ### Code navigation
 
@@ -113,8 +114,9 @@
 - **gd** - go do definition
 - **:Ag** - Find anything with AG command
 
-![Ag find](./images/fuzzy_find_anything.png)
-*Ag find anything!*
+| ![Ag find](./images/fuzzy_find_anything.png) |
+| :--:                                         |
+| *Ag find anything!*                          |
 
 ### Window and tab navigation
 
@@ -133,8 +135,10 @@
 - **\<Leader\>+** - horizontal resize +
 - **\<Leader\>-** - horizontal resize -
 - **\<Leader\>=** - all splits equal
-![Window splits](./images/window_splits.png)
-*Easy navigation on window splits*
+
+| ![Window splits](./images/window_splits.png) |
+| :--:                                         |
+| *Easy navigation on window splits*           |
 
 ### Folding
 
@@ -146,5 +150,6 @@ Assuming that your code is well indented, you can quickly hide and show methods/
 - **z2** - set foldlevel = 1
 - **zn** - set foldlevel = n-1
 
-![Folding](./images/folding.png)
-*Folding example using z1 key*
+| ![Folding](./images/folding.png) |
+| :--:                             |
+| *Folding example using z1 key*   |
