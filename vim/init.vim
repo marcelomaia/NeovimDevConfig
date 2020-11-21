@@ -78,7 +78,7 @@ call vundle#end()
 " ============= Preferences =================
 let mapleader = "\\"
 colorscheme dracula
-"let g:airline_theme='wombat'
+let g:airline_theme='dracula'
 noremap q1 :q<CR>
 nnoremap w2 :w<CR>
 nnoremap wq1 :wq<CR>
@@ -310,14 +310,14 @@ endfunction
 " gv: Show file history
 " gr: Reset an uncommited single file
 " gr! Reset all uncommited files
-nmap <Leader>gs :G<CR>
-nmap <Leader>gc :Gco<CR>
-nmap <Leader>gca :Gco --amend<CR>
+nmap <Leader>gs :vertical G<CR>
+nmap <Leader>gc :vertical Gco<CR>
+nmap <Leader>gca :vertical Gco --amend<CR>
 nmap <Leader>gp :Gpush<CR>
 nmap <Leader>gl :diffget //3<CR>
 nmap <Leader>gh :diffget //2<CR>
 nmap <Leader>gd :Gvdiffsplit!<CR>
-nmap <Leader>gd! :G diff<CR>
+nmap <Leader>gd! :vertical G diff<CR>
 nmap <Leader>gv :GV!<CR>
 nmap <Leader>gb :Gbrowse<CR>
 nmap <Leader>gr :call RevertFile()<CR>
@@ -357,7 +357,7 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " ================Tagbar====================
 nnoremap <silent> <Leader>tt :TagbarToggle<CR>
-autocmd VimEnter * nested :call tagbar#autoopen(1)
+"autocmd VimEnter * nested :call tagbar#autoopen(1)
 " ================Tagbar====================
 
 " ================Markdown====================
