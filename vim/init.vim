@@ -48,6 +48,7 @@ Plugin 'sotte/presenting.vim'                         " Added presentation slide
 Plugin 'majutsushi/tagbar'                            " Get an overview of current file structure
 Plugin 'neoclide/coc.nvim'                            " For code intellisense
 Plugin 'preservim/nerdtree'
+Plugin 'wfxr/minimap.vim'
 Plugin 'scrooloose/nerdcommenter'                     " Comments
 Plugin 'sheerun/vim-polyglot'                         " Syntax highlight
 Plugin 'shumphrey/fugitive-gitlab.vim'            " Browse gitlab
@@ -268,14 +269,6 @@ let g:user_emmet_mode='a'    "enable all function in all mode.
 let g:user_emmet_leader_key=','
 " ================Emmet====================
 
-" ================Ctrlp====================
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|out\|bin\|obj\|tmp$',
-  \ 'file': '\.so$\|\.dat$|\.DS_Store$'
-  \ }
-let g:ctrlp_show_hidden = 1
-" ================Ctrlp====================
-
 " ================GitGutter====================
 " Go to next git change
 nmap [g <Plug>(GitGutterPrevHunk)
@@ -414,6 +407,7 @@ else
 endif
 " ================Figlet====================
 
+" ================Emoji find====================
 " Use emoji-fzf and fzf to fuzzy-search for emoji, and insert the result
 function! InsertEmoji(emoji)
     let @a = system('cut -d " " -f 1 | emoji-fzf get', a:emoji)
@@ -426,3 +420,8 @@ command! -bang Emoj
       \ 'options': '--preview ''emoji-fzf get --name {1}''',
       \ 'sink': function('InsertEmoji')
       \ })
+" ================Emoji find====================
+
+" ================Minimap====================
+nnoremap <silent> <Leader>mm :MinimapToggle<CR>
+" ================Minimap====================

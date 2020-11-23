@@ -23,7 +23,7 @@
 
 ### Mandatory
 
-- NeoVIM
+- [NeoVIM >= 0.5](https://launchpad.net/~neovim-ppa/+archive/ubuntu/stable)
 - Nodejs >= 12. Please prefer [NVM](https://github.com/nvm-sh/nvm)
 - Python >2.7   Please prefer 3.5+
 
