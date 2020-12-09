@@ -75,6 +75,11 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+" Games
+Plugin 'johngrib/vim-game-snake'               " :VimGameSnake hjkl
+Plugin 'johngrib/vim-game-code-break'          " :VimGameCodeBreak hjkl
+
 call vundle#end()
 " ============= Preferences =================
 let mapleader = "\\"
@@ -209,13 +214,15 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Jump between snippets points
-let g:coc_snippet_next = '<c-s-j>'
-let g:coc_snippet_prev = '<c-s-k>'
+" f8 and f6  are forward and backward music :p
+let g:coc_snippet_next = '<c-F8>'
+let g:coc_snippet_prev = '<c-F6>'
 
 " You can add more intellisense to yml, just add coc-settings.json config from https://www.schemastore.org/api/json/catalog.json
 let g:coc_global_extensions=[
             \'coc-css',
             \'coc-docker' ,
+            \'coc-elixir',
             \'coc-eslint',
             \'coc-highlight',
             \'coc-json',
@@ -235,7 +242,7 @@ let g:coc_global_extensions=[
 " ================NERDTree====================
 let NERDTreeShowHidden=1
 nmap <C-n> :NERDTreeToggle<CR>
-let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__', 'CodeAnalysis', 'out', 'node_modules']
+let NERDTreeIgnore=[ '\.git$', '\.pyc$', '\.egg-info$', '__pycache__', 'CodeAnalysis', '^out$', 'node_modules']
 
 let g:NERDTreeGitStatusIndicatorMapCustom = {
             \ 'Modified'  :'m',
