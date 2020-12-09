@@ -12,9 +12,10 @@ echo -e "$C_RED
          ░    ░  ░    ░ ░        ░   ░         ░
 $C_OFF"
 
-mkdir -p ~/.config/nvim/after
-mkdir -p ~/.config/nvim/vscode-snippets
 mkdir -p ~/.config/coc/ultisnips/
+mkdir -p ~/.config/nvim/after
+mkdir -p ~/.config/nvim/temp_dirs/undodir
+mkdir -p ~/.config/nvim/vscode-snippets
 mkdir -p ~/.omnisharp
 
 echo -e "$C_GREEN Copying init.vim...$C_OFF"

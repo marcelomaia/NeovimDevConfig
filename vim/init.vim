@@ -179,6 +179,14 @@ noremap <Leader>sp :setlocal spell! spelllang=pt_BR<CR>
 set complete+=kspell<CR>
 noremap <Leader>s! :set spell!<CR>
 autocmd FileType gitcommit setlocal spell spelllang=en_us
+" Turn persistent undo on
+try
+     set undodir=~/.vim_runtime/temp_dirs/undodir
+     set undofile
+endtry
+
+" Set 7 lines to the cursor - when moving vertically using j/k
+set scrolloff=3
 " Force hjkl
 "nnoremap <Left> :echoe "Use h"<CR>
 "nnoremap <Right> :echoe "Use l"<CR>
