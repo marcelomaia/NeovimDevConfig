@@ -232,6 +232,7 @@ let g:coc_global_extensions=[
             \'coc-docker' ,
             \'coc-elixir',
             \'coc-eslint',
+            \'coc-flutter-tools',
             \'coc-highlight',
             \'coc-json',
             \'coc-markdownlint' ,
