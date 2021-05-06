@@ -228,6 +228,7 @@ let g:coc_snippet_prev = '<c-F6>'
 
 " You can add more intellisense to yml, just add coc-settings.json config from https://www.schemastore.org/api/json/catalog.json
 let g:coc_global_extensions=[
+            \'coc-angular',
             \'coc-css',
             \'coc-docker' ,
             \'coc-elixir',
@@ -235,7 +236,7 @@ let g:coc_global_extensions=[
             \'coc-flutter-tools',
             \'coc-highlight',
             \'coc-json',
-            \'coc-markdownlint' ,
+            \'coc-markdownlint',
             \'coc-pairs',
             \'coc-prettier',
             \'coc-python',
