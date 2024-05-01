@@ -60,7 +60,7 @@ Plugin 'yggdroot/indentline'                          " Show a vertical line for
 Plugin 'fadein/vim-FIGlet'                            " ASCII text art
 Plugin 'machakann/vim-highlightedyank'                " Show highlight on recently yanked text
 Plugin 'tommcdo/vim-exchange'                         " cx{motion} + . change words position
-Plugin 'gyim/vim-boxdraw'                             " ASCII diagrams on visual block mode. Maybe create a symbolic link ln -s /usr/bin/python3.8 /usr/bin/python
+"Plugin 'gyim/vim-boxdraw'                             " ASCII diagrams on visual block mode. Maybe create a symbolic link ln -s /usr/bin/python3.8 /usr/bin/python
 " Web
 Plugin 'mattn/emmet-vim'                              " Html completion
 " Python
@@ -321,15 +321,15 @@ endfunction
 " gr: Reset an uncommited single file
 " gr! Reset all uncommited files
 nmap <Leader>gs :vertical G<CR>
-nmap <Leader>gc :vertical Gco<CR>
-nmap <Leader>gca :vertical Gco --amend<CR>
+nmap <Leader>gc :vertical G commit<CR>
+nmap <Leader>gca :vertical G commit --amend<CR>
 nmap <Leader>gp :Gpush<CR>
 nmap <Leader>gl :diffget //3<CR>
 nmap <Leader>gh :diffget //2<CR>
 nmap <Leader>gd :Gvdiffsplit!<CR>
 nmap <Leader>gd! :vertical G diff<CR>
 nmap <Leader>gv :GV!<CR>
-nmap <Leader>gb :Gbrowse<CR>
+nmap <Leader>gb :GBrowse<CR>
 nmap <Leader>gr :call RevertFile()<CR>
 nmap <Leader>gr! :call RevertAllFiles()<CR>
 " ================Fugitive====================
