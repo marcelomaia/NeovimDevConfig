@@ -1,5 +1,4 @@
 {
-  "coc.preferences.extensionUpdateCheck": "weekly",
   "vetur.trace.server": "verbose",
   "vetur.completion.autoImport": true,
   "vetur.completion.scaffoldSnippetSources": {
@@ -11,17 +10,11 @@
   "vetur.format.defaultFormatter.scss": "prettier",
   "vetur.format.enable": true,
   "vetur.format.defaultFormatter.html": "prettier",
-  "coc.preferences.formatOnSaveFiletypes": [
-    "css",
-    "vue",
-    "javascript",
-    "scss",
-    "json"
-  ],
+  "coc.preferences.formatOnSave": true,
+  "snippets.loadVSCodeProjectSnippets": false,
   "snippets.textmateSnippetsRoots": ["~/.config/nvim/vscode-snippets"],
   "codeLens.enable": true,
   "snippets.extends": { "vue": ["quasar"] },
-  "coc.preferences.rootPatterns": [".git", ".vim", ".projections.json"],
   "diagnostic.format": "[%source]%code: %message [%severity]",
   "yaml.schemas": {
     "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json": [
@@ -57,9 +50,9 @@
       "Values.*.yaml"
     ]
   },
-  "suggest.numberSelect": true,
   "diagnostic.virtualText": true,
-  "coc.preferences.colorSupport": true,
   "markdownlint.onOpen": true,
-  "markdownlint.onSave": true
+  "markdownlint.onSave": true,
+  // python
+  "python.formatting.provider": "black"
 }

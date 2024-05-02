@@ -195,6 +195,10 @@ set scrolloff=3
 " ============= Preferences =================
 
 " ============= Coc =================
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 " Il will use in another moment -> autocmd User CocNvimInit echo "COC started..."
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " convert a piece of code in snippet
@@ -239,7 +243,7 @@ let g:coc_global_extensions=[
             \'coc-markdownlint',
             \'coc-pairs',
             \'coc-prettier',
-            \'coc-python',
+            \'coc-pyright',
             \'coc-snippets',
             \'coc-sql',
             \'coc-vetur' ,
