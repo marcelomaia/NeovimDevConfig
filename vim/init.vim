@@ -79,7 +79,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Games
 Plugin 'johngrib/vim-game-snake'               " :VimGameSnake hjkl
 Plugin 'johngrib/vim-game-code-break'          " :VimGameCodeBreak hjkl
-
+Plugin 'github/copilot.vim'                    " copilot
 call vundle#end()
 " ============= Preferences =================
 let mapleader = "\\"
@@ -211,8 +211,8 @@ nmap <silent> [e <Plug>(coc-diagnostic-prev-error)
 nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 
 nmap <F2> <Plug>(coc-rename)
-nmap <silent> <c-space> :CocAction<CR>
-vmap <silent> <c-space> :CocAction<CR>
+xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 nmap <silent> <Leader>cp :call CocAction("pickColor")<CR>
 nmap <silent> <Leader>cp! :call CocAction("colorPresentation")<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -327,7 +327,7 @@ endfunction
 nmap <Leader>gs :vertical G<CR>
 nmap <Leader>gc :vertical G commit<CR>
 nmap <Leader>gca :vertical G commit --amend<CR>
-nmap <Leader>gp :Gpush<CR>
+nmap <Leader>gp :G push<CR>
 nmap <Leader>gl :diffget //3<CR>
 nmap <Leader>gh :diffget //2<CR>
 nmap <Leader>gd :Gvdiffsplit!<CR>
