@@ -60,6 +60,7 @@ Plugin 'yggdroot/indentline'                          " Show a vertical line for
 Plugin 'fadein/vim-FIGlet'                            " ASCII text art
 Plugin 'machakann/vim-highlightedyank'                " Show highlight on recently yanked text
 Plugin 'tommcdo/vim-exchange'                         " cx{motion} + . change words position
+Plugin 'kshenoy/vim-signature'                        " Show marks ma, mb, mc, etc
 "Plugin 'gyim/vim-boxdraw'                             " ASCII diagrams on visual block mode. Maybe create a symbolic link ln -s /usr/bin/python3.8 /usr/bin/python
 " Web
 Plugin 'mattn/emmet-vim'                              " Html completion
@@ -79,6 +80,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Games
 Plugin 'johngrib/vim-game-snake'               " :VimGameSnake hjkl
 Plugin 'johngrib/vim-game-code-break'          " :VimGameCodeBreak hjkl
+" AI completion
 Plugin 'github/copilot.vim'                    " copilot
 call vundle#end()
 " ============= Preferences =================
@@ -130,6 +132,7 @@ match ErrorMsg '\s\+$'
 autocmd BufWritePre * :%s/\s\+$//e
 " Tab navigation
 " :tabedit file.txt
+noremap <Leader>tn :tabnew<CR>
 noremap <Leader>1 1gt
 noremap <Leader>2 2gt
 noremap <Leader>3 3gt
@@ -371,6 +374,12 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " ================Tagbar====================
 nnoremap <silent> <Leader>tt :TagbarToggle<CR>
+autocmd FileType * nested :call tagbar#autoopen(0)     " open tagbar automatically
+
+" please install unversal-ctags -> https://github.com/universal-ctags/ctags
+if has('mac')
+    let g:tagbar_ctags_bin = '/usr/local/Cellar/universal-ctags/p6.1.20240421.0/bin/ctags'
+endif
 "autocmd VimEnter * nested :call tagbar#autoopen(1)
 " ================Tagbar====================
 

@@ -55,5 +55,6 @@
   "markdownlint.onSave": true,
   // python
   "python.formatting.provider": "black",
-  "python.linting.pylintArgs": ["--disable=C0111"]
+  "python.linting.pylintEnabled": true,
+  "python.linting.pylintArgs": ["--disable=C0111,C0114,C0115,C0116"]
 }
