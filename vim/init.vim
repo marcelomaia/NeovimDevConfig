@@ -32,56 +32,56 @@ endif
 
 call vundle#begin()
 " For any situation
-Plugin 'APZelos/blamer.nvim'                          " like git lens from vscode
-Plugin 'Xuyuanp/nerdtree-git-plugin'                  " NERDTree git
-Plugin 'airblade/vim-gitgutter'                       " NERDTree git
-Plugin 'editorconfig/editorconfig-vim'                " keep coding style across IDES
-Plugin 'godlygeek/tabular'                            " Align things in the same line. Visual : Tab /pattern
-Plugin 'haya14busa/incsearch-fuzzy.vim'               " Fuzzy search
-Plugin 'haya14busa/incsearch.vim'                     " For a better experience in searching
-Plugin 'honza/vim-snippets'                           " Snippets
+Plugin 'APZelos/blamer.nvim'                                               " like git lens from vscode
+Plugin 'Xuyuanp/nerdtree-git-plugin'                                       " NERDTree git
+Plugin 'airblade/vim-gitgutter'                                            " Show git status in the gutter
+Plugin 'editorconfig/editorconfig-vim'                                     " keep coding style across IDES
+Plugin 'fadein/vim-FIGlet'                                                 " ASCII text art
+Plugin 'godlygeek/tabular'                                                 " Align things in the same line. Visual : Tab /pattern
+Plugin 'haya14busa/incsearch-fuzzy.vim'                                    " Fuzzy search
+Plugin 'haya14busa/incsearch.vim'                                          " For a better experience in searching
+Plugin 'honza/vim-snippets'                                                " Snippets
 Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " Markdown preview in browser
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } } " Find files
-Plugin 'junegunn/fzf.vim'                             " Find files
-Plugin 'junegunn/gv.vim'                              " Git history
-Plugin 'sotte/presenting.vim'                         " Added presentation slides in CLI :
-Plugin 'majutsushi/tagbar'                            " Get an overview of current file structure
-Plugin 'neoclide/coc.nvim'                            " For code intellisense
-Plugin 'preservim/nerdtree'
-Plugin 'wfxr/minimap.vim'
-Plugin 'scrooloose/nerdcommenter'                     " Comments
-Plugin 'sheerun/vim-polyglot'                         " Syntax highlight
-Plugin 'shumphrey/fugitive-gitlab.vim'            " Browse gitlab
-Plugin 'tpope/vim-fugitive'                           " NERDTree git
-Plugin 'tpope/vim-rhubarb'                            " Browse github
-Plugin 'tpope/vim-surround'                           " Rename tags and etc
-Plugin 'lukelbd/vim-toggle'                           " yes<->no, on<->off, etc.
-Plugin 'yggdroot/indentline'                          " Show a vertical line for indents
-Plugin 'fadein/vim-FIGlet'                            " ASCII text art
-Plugin 'machakann/vim-highlightedyank'                " Show highlight on recently yanked text
-Plugin 'tommcdo/vim-exchange'                         " cx{motion} + . change words position
-Plugin 'kshenoy/vim-signature'                        " Show marks ma, mb, mc, etc
-"Plugin 'gyim/vim-boxdraw'                             " ASCII diagrams on visual block mode. Maybe create a symbolic link ln -s /usr/bin/python3.8 /usr/bin/python
-" Web
-Plugin 'mattn/emmet-vim'                              " Html completion
-" Python
+Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }                      " Find files
+Plugin 'junegunn/fzf.vim'                                                  " Find files
+Plugin 'junegunn/gv.vim'                                                   " Git history
+Plugin 'kshenoy/vim-signature'                                             " Show marks ma, mb, mc, etc
+Plugin 'lukelbd/vim-toggle'                                                " yes<->no, on<->off, etc.
+Plugin 'machakann/vim-highlightedyank'                                     " Show highlight on recently yanked text
+Plugin 'majutsushi/tagbar'                                                 " Get an overview of current file structure
+Plugin 'neoclide/coc.nvim'                                                 " For code intellisense
+Plugin 'preservim/nerdtree'                                                " To show files in a tree
+Plugin 'scrooloose/nerdcommenter'                                          " Comments <Leader>cc / <Leader>c<Space>
+Plugin 'sheerun/vim-polyglot'                                              " Syntax highlight
+Plugin 'sotte/presenting.vim'                                              " Added presentation slides in CLI :
+Plugin 'tommcdo/vim-exchange'                                              " cx{motion} + . change words position
+Plugin 'tpope/vim-fugitive'                                                " NERDTree git
+Plugin 'tpope/vim-rhubarb'                                                 " Browse github
+Plugin 'tpope/vim-surround'                                                " Rename tags and etc
+Plugin 'yggdroot/indentline'                                               " Show a vertical line for indents
+" Plugin 'gyim/vim-boxdraw'                                                " ASCII diagrams on visual block mode. Maybe create a symbolic link ln -s /usr/bin/python3.8 /usr/bin/python
+
+" Web dev
+Plugin 'mattn/emmet-vim'                                                   " Html completion
+
 " C#
-Plugin 'OmniSharp/omnisharp-vim'
+Plugin 'OmniSharp/omnisharp-vim'                                           " cSharp intellisense
 
 " Linting
-Plugin 'dense-analysis/ale'
+Plugin 'dense-analysis/ale'                                                " Lintint capabilities
 
-" Theme
+" Themes
 Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Games
-Plugin 'johngrib/vim-game-snake'               " :VimGameSnake hjkl
-Plugin 'johngrib/vim-game-code-break'          " :VimGameCodeBreak hjkl
+" For fun
+Plugin 'johngrib/vim-game-snake'                                           " :VimGameSnake hjkl
+Plugin 'johngrib/vim-game-code-break'                                      " :VimGameCodeBreak hjkl
+
 " AI completion
-Plugin 'github/copilot.vim'                    " copilot
+Plugin 'github/copilot.vim'                                                " copilot
 call vundle#end()
 " ============= Preferences =================
 let mapleader = "\\"
@@ -235,12 +235,10 @@ let g:coc_snippet_prev = '<c-F6>'
 
 " You can add more intellisense to yml, just add coc-settings.json config from https://www.schemastore.org/api/json/catalog.json
 let g:coc_global_extensions=[
-            \'coc-angular',
             \'coc-css',
             \'coc-docker' ,
-            \'coc-elixir',
             \'coc-eslint',
-            \'coc-flutter-tools',
+            \'coc-go',
             \'coc-highlight',
             \'coc-json',
             \'coc-markdownlint',
@@ -388,15 +386,6 @@ nmap <Leader>mp <Plug>MarkdownPreview
 let g:mkdp_auto_close = 0
 " ================Markdown====================
 
-" ================Gitlab browse====================
-" In your .bashrc or .zshrc add
-" export MY_GITLAB_DOMAIN=xpto.domain
-" export GITLAB_ACCESS_TOKEN=mytoken
-if $MY_GITLAB_DOMAIN !=# ''
-    let g:fugitive_gitlab_domains = [$MY_GITLAB_DOMAIN]
-    let g:gitlab_api_keys = {$MY_GITLAB_DOMAIN: $GITLAB_ACCESS_TOKEN}
-endif
-" ================Gitlab browse====================
 
 " ================Toggle string values====================
 nnoremap <Leader>~ :Toggle<CR>
