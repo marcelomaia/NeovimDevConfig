@@ -59,7 +59,7 @@ Plugin 'tpope/vim-fugitive'                                                " NER
 Plugin 'tpope/vim-rhubarb'                                                 " Browse github
 Plugin 'tpope/vim-surround'                                                " Rename tags and etc
 Plugin 'yggdroot/indentline'                                               " Show a vertical line for indents
-" Plugin 'gyim/vim-boxdraw'                                                " ASCII diagrams on visual block mode. Maybe create a symbolic link ln -s /usr/bin/python3.8 /usr/bin/python
+Plugin 'gyim/vim-boxdraw'                                                  " ASCII diagrams on visual block mode. Maybe create a symbolic link ln -s /usr/bin/python3.8 /usr/bin/python
 
 " Web dev
 Plugin 'mattn/emmet-vim'                                                   " Html completion
@@ -444,3 +444,7 @@ command! -bang Emoj
 " ================Minimap====================
 nnoremap <silent> <Leader>mm :MinimapToggle<CR>
 " ================Minimap====================
+
+" need to install pynvim
+let g:python3_host_prog = "/usr/bin/python3"
+
