@@ -81,7 +81,23 @@ Plugin 'johngrib/vim-game-snake'                                           " :Vi
 Plugin 'johngrib/vim-game-code-break'                                      " :VimGameCodeBreak hjkl
 
 " AI completion
-Plugin 'github/copilot.vim'                                                " copilot
+let code_assistant_file = expand('~/.vim/code_assistant.txt')
+
+if filereadable(code_assistant_file)
+    let code_assistant = readfile(code_assistant_file)[0]
+else
+    let code_assistant = input("What do you prefer as a code assistant? (github/copilot.vim (1) or Exafunction/codeium.vim (2), None (any key): ")
+    call writefile([code_assistant], code_assistant_file)
+endif
+
+if code_assistant == '1'
+    Plugin 'github/copilot.vim'
+elseif code_assistant == '2'
+    Plugin 'Exafunction/codeium.vim'
+else
+    echo "No code assistant selected."
+endif
+
 call vundle#end()
 " ============= Preferences =================
 let mapleader = "\\"
