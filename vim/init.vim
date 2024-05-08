@@ -86,7 +86,7 @@ let code_assistant_file = expand('~/.vim/code_assistant.txt')
 if filereadable(code_assistant_file)
     let code_assistant = readfile(code_assistant_file)[0]
 else
-    let code_assistant = input("What do you prefer as a code assistant? (github/copilot.vim (1) or Exafunction/codeium.vim (2), None (any key): ")
+    let code_assistant = input('What do you prefer as a code assistant? (github/copilot.vim (1) or Exafunction/codeium.vim (2), None (any key): ')
     call writefile([code_assistant], code_assistant_file)
 endif
 
@@ -95,7 +95,7 @@ if code_assistant == '1'
 elseif code_assistant == '2'
     Plugin 'Exafunction/codeium.vim'
 else
-    echo "No code assistant selected."
+    echo 'No code assistant selected.'
 endif
 
 call vundle#end()
@@ -206,6 +206,9 @@ endtry
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set scrolloff=3
+" control + / for commenting
+nnoremap <C-_> :call nerdcommenter#Comment(0, "toggle")<CR>
+vnoremap <C-_> :call nerdcommenter#Comment(0, "toggle")<CR>
 " Force hjkl
 "nnoremap <Left> :echoe "Use h"<CR>
 "nnoremap <Right> :echoe "Use l"<CR>
@@ -404,7 +407,7 @@ let g:mkdp_auto_close = 0
 
 
 " ================Toggle string values====================
-nnoremap <Leader>~ :Toggle<CR>
+nnoremap <Leader>! :Toggle<CR>
 let g:toggle_words_on = ['true', 'on', 'yes', 'define', 'in', 'up', 'left', 'north', 'east', 'and']
 let g:toggle_words_off = ['false', 'off', 'no', 'undef', 'out', 'down', 'right', 'south', 'west', 'or']
 " ================Toggle string values====================
@@ -462,5 +465,4 @@ nnoremap <silent> <Leader>mm :MinimapToggle<CR>
 " ================Minimap====================
 
 " need to install pynvim
-let g:python3_host_prog = "/usr/bin/python3"
-
+let g:python3_host_prog = '/usr/bin/python3'
