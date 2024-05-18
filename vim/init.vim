@@ -38,6 +38,7 @@ Plugin 'airblade/vim-gitgutter'                                            " Sho
 Plugin 'editorconfig/editorconfig-vim'                                     " keep coding style across IDES
 Plugin 'fadein/vim-FIGlet'                                                 " ASCII text art
 Plugin 'godlygeek/tabular'                                                 " Align things in the same line. Visual : Tab /pattern
+Plugin 'gyim/vim-boxdraw'                                                  " ASCII diagrams on visual block mode.
 Plugin 'haya14busa/incsearch-fuzzy.vim'                                    " Fuzzy search
 Plugin 'haya14busa/incsearch.vim'                                          " For a better experience in searching
 Plugin 'honza/vim-snippets'                                                " Snippets
@@ -50,6 +51,7 @@ Plugin 'lukelbd/vim-toggle'                                                " yes
 Plugin 'machakann/vim-highlightedyank'                                     " Show highlight on recently yanked text
 Plugin 'majutsushi/tagbar'                                                 " Get an overview of current file structure
 Plugin 'neoclide/coc.nvim'                                                 " For code intellisense
+Plugin 'nvimdev/dashboard-nvim'                                            " Dashboard
 Plugin 'preservim/nerdtree'                                                " To show files in a tree
 Plugin 'scrooloose/nerdcommenter'                                          " Comments <Leader>cc / <Leader>c<Space>
 Plugin 'sheerun/vim-polyglot'                                              " Syntax highlight
@@ -59,7 +61,6 @@ Plugin 'tpope/vim-fugitive'                                                " NER
 Plugin 'tpope/vim-rhubarb'                                                 " Browse github
 Plugin 'tpope/vim-surround'                                                " Rename tags and etc
 Plugin 'yggdroot/indentline'                                               " Show a vertical line for indents
-Plugin 'gyim/vim-boxdraw'                                                  " ASCII diagrams on visual block mode. Maybe create a symbolic link ln -s /usr/bin/python3.8 /usr/bin/python
 
 " Web dev
 Plugin 'mattn/emmet-vim'                                                   " Html completion
@@ -206,9 +207,6 @@ endtry
 
 " Set 7 lines to the cursor - when moving vertically using j/k
 set scrolloff=3
-" control + / for commenting
-nnoremap <C-_> :call nerdcommenter#Comment(0, "toggle")<CR>
-vnoremap <C-_> :call nerdcommenter#Comment(0, "toggle")<CR>
 " Force hjkl
 "nnoremap <Left> :echoe "Use h"<CR>
 "nnoremap <Right> :echoe "Use l"<CR>
@@ -235,6 +233,8 @@ nmap <silent> ]e <Plug>(coc-diagnostic-next-error)
 nmap <F2> <Plug>(coc-rename)
 xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
+nmap <silent> <leader>a  <Plug>(coc-codeaction)
+
 nmap <silent> <Leader>cp :call CocAction("pickColor")<CR>
 nmap <silent> <Leader>cp! :call CocAction("colorPresentation")<CR>
 autocmd CursorHold * silent call CocActionAsync('highlight')
@@ -391,7 +391,9 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " ================Tagbar====================
 nnoremap <silent> <Leader>tt :TagbarToggle<CR>
-autocmd FileType * nested :call tagbar#autoopen(0)     " open tagbar automatically
+if winwidth(0) > 180
+    autocmd FileType * nested :call tagbar#autoopen(0)     " open tagbar automatically
+endif
 
 " please install unversal-ctags -> https://github.com/universal-ctags/ctags
 if has('mac')
