@@ -51,7 +51,7 @@ Plugin 'lukelbd/vim-toggle'                                                " yes
 Plugin 'machakann/vim-highlightedyank'                                     " Show highlight on recently yanked text
 Plugin 'majutsushi/tagbar'                                                 " Get an overview of current file structure
 Plugin 'neoclide/coc.nvim'                                                 " For code intellisense
-Plugin 'nvimdev/dashboard-nvim'                                            " Dashboard
+Plugin 'mhinz/vim-startify'                                                " Dashboard
 Plugin 'preservim/nerdtree'                                                " To show files in a tree
 Plugin 'scrooloose/nerdcommenter'                                          " Comments <Leader>cc / <Leader>c<Space>
 Plugin 'sheerun/vim-polyglot'                                              " Syntax highlight
@@ -468,3 +468,6 @@ nnoremap <silent> <Leader>mm :MinimapToggle<CR>
 
 " need to install pynvim
 let g:python3_host_prog = '/usr/bin/python3'
+
+" startify
+let g:startify_change_to_vcs_root = 1
