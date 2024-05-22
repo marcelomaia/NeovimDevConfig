@@ -76,6 +76,8 @@ Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'sickill/vim-monokai'
 
 " For fun
 Plugin 'johngrib/vim-game-snake'                                           " :VimGameSnake hjkl
@@ -102,8 +104,8 @@ endif
 call vundle#end()
 " ============= Preferences =================
 let mapleader = "\\"
-colorscheme dracula
-let g:airline_theme='dracula'
+colorscheme monokai
+let g:airline_theme='molokai'
 noremap q1 :q<CR>
 nnoremap w2 :w<CR>
 nnoremap wq1 :wq<CR>

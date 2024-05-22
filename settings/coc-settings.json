@@ -58,6 +58,7 @@
   "python.linting.pylintEnabled": true,
   "python.analysis.autoSearchPaths": true,
   "python.analysis.diagnosticMode": "workspace",
+  "pyright.organizeimports.provider": "isort",
   "python.analysis.typeCheckingMode": "basic",
   "python.analysis.autoImportCompletions": true,
   "python.linting.pylintArgs": ["--disable=C0111,C0114,C0115,C0116"]
