@@ -68,9 +68,6 @@ Plugin 'mattn/emmet-vim'                                                   " Htm
 " C#
 Plugin 'OmniSharp/omnisharp-vim'                                           " cSharp intellisense
 
-" Linting
-Plugin 'dense-analysis/ale'                                                " Lintint capabilities
-
 " Themes
 Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'ryanoasis/vim-devicons'
@@ -294,16 +291,6 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
             \ }
 " ================NERDTree====================
 
-" ================ALE-Linting====================
-" nmap <silent> <Leader>k <Plug>(ale_previous_wrap) replaced by coc-diagnostic-prev
-" nmap <silent> <Leader>j <Plug>(ale_next_wrap) replaced by coc-diagnostic-next
-" nmap <silent> <Leader>l <Plug>(ale_fix) replace by coc-action
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%]%code:% %s [%severity%]'
-let g:ale_fixers = {'javascript': ['prettier', 'eslint'], 'json': ['prettier'], 'vue': ['eslint']}
-let g:ale_linters = {'javascript': ['eslint']}
-" ================ALE-Linting====================
 
 " ================Emmet====================
 let g:user_emmet_mode='n'    "only enable normal mode functions.
