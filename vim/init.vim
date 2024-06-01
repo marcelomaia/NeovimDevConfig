@@ -233,6 +233,7 @@ nmap <F2> <Plug>(coc-rename)
 xmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 nmap <silent> <leader>r  <Plug>(coc-codeaction-refactor-selected)
 nmap <silent> <leader>a  <Plug>(coc-codeaction)
+nmap <silent> <leader>f  <Plug>(coc-fix-current)
 
 nmap <silent> <Leader>cp :call CocAction("pickColor")<CR>
 nmap <silent> <Leader>cp! :call CocAction("colorPresentation")<CR>

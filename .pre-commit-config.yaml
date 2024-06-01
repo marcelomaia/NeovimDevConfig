@@ -1,13 +1,13 @@
 repos:
-- repo: https://github.com/Vimjas/vint
-  rev: v0.4a3
-  hooks:
+  - repo: https://github.com/Vimjas/vint
+    rev: v0.4a3
+    hooks:
       - id: vint
         files: ^vim/
         args: [--enable-neovim, --color]
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v3.3.0
-  hooks:
-    - id: check-yaml
-    - id: end-of-file-fixer
-    - id: trailing-whitespace
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v3.3.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
